@@ -1,8 +1,18 @@
+body {
+    background-color: rgba(0, 0, 0, 0.945);
+    width: 900px;
+    margin: 0 auto;
+    
+    flex-flow: row wrap;
+    
+
+}
+
 h1 { 
 
     color: #666565;
     font-family: 'Dancing Script', cursive;
-    font-size: 50px;
+    font-size: 80px;
     text-align: center;
 
     
@@ -10,10 +20,10 @@ h1 {
     
     background-image: url("../Aufgabe2/Bilder/Tokyo.jpg");
     background-size: cover;
-    border: 5px solid rgba(0, 5, 48, 0.945);
+    border: 0px solid rgba(255, 255, 255, 0.945);
     margin: 0 auto;
    
-    width: 1000px;
+    width: 1010px;
 
     flex: 1 10%;
    
@@ -26,11 +36,11 @@ h2 {
     text-align: center;
 
     padding: 30px 50px 30px 50px;
-    background-color: rgb(77, 104, 153);
-    border: 5px solid rgba(0, 5, 48, 0.945);
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgba(255, 255, 255, 0.945);
     margin: 0 auto;
    
-    width: 910px;
+    width: 900px;
 
     flex:  1 10%;
 
