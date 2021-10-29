@@ -7,13 +7,21 @@ body {
     
 
 }
-
-h1 { 
-
-    color: #666565;
+h1 {
+    color: #aaa9a9;
     font-family: 'Dancing Script', cursive;
-    font-size: 80px;
+    font-size: 65px;
     text-align: center;
+
+    padding: 50px 5px 10px 5px;
+    
+    margin: 0 auto;
+    
+
+}
+#Tokyo { 
+
+   
 
     
     height: 500px;
@@ -23,10 +31,26 @@ h1 {
     border: 0px solid rgba(255, 255, 255, 0.945);
     margin: 0 auto;
    
-    width: 1010px;
+    width: 1000px;
 
     flex: 1 10%;
    
+}
+
+#Events {
+
+
+    
+    height: 500px;
+    
+    background-image: url("../Aufgabe2/Bilder/kimono.jpg");
+    background-size: cover;
+    border: 0px solid rgba(255, 255, 255, 0.945);
+    margin: 0 auto;
+   
+    width: 1000px;
+
+    flex: 1 10%;
 }
 
 h2 {
