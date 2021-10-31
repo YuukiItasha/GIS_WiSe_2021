@@ -183,3 +183,105 @@ nav:before {
       content: '<-';
   }
 
+  /* @media screen and (max-width: 1028px) {
+    h1 {
+      width: 514px;
+      margin: 0;
+      
+
+    }
+    h2{
+        width: 514px;
+        margin: 0%;
+       
+    }
+    nav, form{
+        width: 514px;
+        margin: 0%;
+        
+    }
+    p, ul{
+        width: 514px;
+        margin: 0%;
+        
+    }
+    .medien{
+        width: 514px;
+        margin: 0%;
+        
+    }
+
+    img, video{
+      width: 300px;
+  }
+} */
+
+@media screen and (min-width: 1028px){
+  h1 {
+      width: 910px;
+      margin: 0%;
+      
+
+    }
+    h2{
+        width: 840px;
+        margin:  0%;
+       
+    }
+
+    p, ul{
+        width: 890px;
+        margin:  0%;
+        
+    }
+    .medien{
+        width: 910px;
+        margin:  0%;
+        
+    }
+
+  
+    
+}
+/* @media screen and (max-width: 600px) {
+  h1 {
+      width: 300px;
+      display: flex ;
+
+
+     
+      
+      
+
+    }
+    h2{
+        width: 300px;
+        
+
+        
+       
+       
+    }
+    nav, form{
+        width: 300px;
+        
+        
+        
+    }
+    p, ul{
+        width: 300px;
+        
+        
+        
+    }
+    .medien{
+        width: 300px;
+       
+        
+        
+    }
+   img, video{
+       width: 200px;
+       
+   }
+} */
