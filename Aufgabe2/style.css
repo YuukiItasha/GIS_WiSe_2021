@@ -286,6 +286,7 @@ nav:before {
     h1 {
         width: 340px;
         margin: 0%;
+        background-size: 340px;
         
   
       }
