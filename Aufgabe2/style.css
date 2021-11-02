@@ -284,43 +284,43 @@ nav:before {
 }
  @media screen and (max-width: 600px) {
     h1 {
-        width: 340px;
+        width: 440px;
         margin: 0%;
         
         
   
       }
     h2, h3{
-          width: 340px;
+          width: 440px;
           margin:  0%;
          
       }
   
       p, ul{
-          width: 340px;
+          width: 440px;
           margin:  0%;
           
       }
       .medien{
-          width: 340px;
+          width: 440px;
           margin:  0%;
           
       }
 
       #Tokyo{
-        width: 340px;
+        width: 440px;
         margin:  0%;
         background-size: 340px;
       }
 
       #Events{
-        width: 340px;
+        width: 440px;
         margin:  0%;
         background-size: 340px;
       }
 
       table {
-        width: 310px;
+        width: 410px;
         margin:  0%;
       }
 } 
