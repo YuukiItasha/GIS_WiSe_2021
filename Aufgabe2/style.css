@@ -134,6 +134,12 @@ p, ul {
   
 }
 
+table, th, td {
+
+    border: thin solid #202020;
+
+}
+
 table {
     color: #202020;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -149,6 +155,15 @@ table {
 
     flex:  1 10%;
 }
+
+td {
+
+    color: #202020;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+
 
 
 
@@ -183,38 +198,34 @@ nav:before {
       content: '<-';
   }
 
-  /* @media screen and (max-width: 1028px) {
-    h1 {
-      width: 514px;
-      margin: 0;
+  @media screen and (max-width: 1028px) {
+
+      h1 {
+      width: 614px;
+      margin: 0%;
       
 
     }
     h2{
-        width: 514px;
-        margin: 0%;
+        width: 544px;
+        margin:  0%;
        
     }
-    nav, form{
-        width: 514px;
-        margin: 0%;
-        
-    }
+
     p, ul{
-        width: 514px;
-        margin: 0%;
+        width: 594px;
+        margin:  0%;
         
     }
     .medien{
-        width: 514px;
-        margin: 0%;
+        width: 594px;
+        margin:  0%;
         
     }
 
-    img, video{
-      width: 300px;
-  }
-} */
+
+
+} 
 
 @media screen and (min-width: 1028px){
   h1 {
@@ -243,45 +254,27 @@ nav:before {
   
     
 }
-/* @media screen and (max-width: 600px) {
-  h1 {
-      width: 300px;
-      display: flex ;
-
-
-     
-      
-      
-
-    }
-    h2{
-        width: 300px;
+ @media screen and (max-width: 600px) {
+    h1 {
+        width: 410px;
+        margin: 0%;
         
-
-        
-       
-       
-    }
-    nav, form{
-        width: 300px;
-        
-        
-        
-    }
-    p, ul{
-        width: 300px;
-        
-        
-        
-    }
-    .medien{
-        width: 300px;
-       
-        
-        
-    }
-   img, video{
-       width: 200px;
-       
-   }
-} */
+  
+      }
+      h2{
+          width: 340px;
+          margin:  0%;
+         
+      }
+  
+      p, ul{
+          width: 390px;
+          margin:  0%;
+          
+      }
+      .medien{
+          width: 410px;
+          margin:  0%;
+          
+      }
+} 
