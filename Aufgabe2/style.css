@@ -228,6 +228,11 @@ nav:before {
         margin:  0%;
     }
 
+    table {
+        width: 594px;
+        margin:  0%;
+      }
+
 
 
 } 
@@ -261,7 +266,10 @@ nav:before {
         margin:  0%;
     }
 
-  
+    table {
+        width: 910px;
+        margin:  0%;
+      }
     
 }
  @media screen and (max-width: 600px) {
@@ -289,6 +297,11 @@ nav:before {
       }
 
       #Tokyo{
+        width: 300px;
+        margin:  0%;
+      }
+
+      table {
         width: 300px;
         margin:  0%;
       }
