@@ -228,6 +228,11 @@ nav:before {
         margin:  0%;
     }
 
+    #Events{
+        width: 594px;
+        margin:  0%;
+      }
+
     table {
         width: 594px;
         margin:  0%;
@@ -266,6 +271,11 @@ nav:before {
         margin:  0%;
     }
 
+    #Events{
+        width: 910px;
+        margin:  0%;
+      }
+
     table {
         width: 910px;
         margin:  0%;
@@ -297,6 +307,11 @@ nav:before {
       }
 
       #Tokyo{
+        width: 300px;
+        margin:  0%;
+      }
+
+      #Events{
         width: 300px;
         margin:  0%;
       }
