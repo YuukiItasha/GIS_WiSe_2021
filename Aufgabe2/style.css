@@ -206,7 +206,7 @@ nav:before {
       
 
     }
-    h2{
+    h2, h3{
         width: 544px;
         margin:  0%;
        
@@ -223,6 +223,11 @@ nav:before {
         
     }
 
+    #Tokyo{
+        width: 594px;
+        margin:  0%;
+    }
+
 
 
 } 
@@ -234,7 +239,7 @@ nav:before {
       
 
     }
-    h2{
+    h2, h3{
         width: 840px;
         margin:  0%;
        
@@ -251,6 +256,11 @@ nav:before {
         
     }
 
+    #Tokyo{
+        width: 910px;
+        margin:  0%;
+    }
+
   
     
 }
@@ -261,7 +271,7 @@ nav:before {
         
   
       }
-      h2{
+    h2, h3{
           width: 340px;
           margin:  0%;
          
@@ -273,8 +283,13 @@ nav:before {
           
       }
       .medien{
-          width: 410px;
+          width: 300px;
           margin:  0%;
           
+      }
+
+      #Tokyo{
+        width: 300px;
+        margin:  0%;
       }
 } 
