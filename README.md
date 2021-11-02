@@ -1,5 +1,9 @@
 # GIS-WiSe2021
 
-<h1> Aufgabe 1 </h1>
+<h2> Aufgabe 1 </h2>
 <p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe1">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe1</a> </b>.</p>
 <p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe1/Tokyo.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe1/Tokyo.html</a> </b>.</p>
+
+<h2> Aufgabe 2 </h2>
+<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe2">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe2</a> </b>.</p>
+<p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe2/Tokyo.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe2/Tokyo.html</a> </b>.</p>
