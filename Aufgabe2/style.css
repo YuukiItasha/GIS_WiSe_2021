@@ -200,41 +200,43 @@ nav:before {
 
   @media screen and (max-width: 1028px) {
 
-      h1 {
-      width: 614px;
+    h1 {
+      width: 610px;
       margin: 0%;
       
 
     }
     h2, h3{
-        width: 544px;
+        width: 600px;
         margin:  0%;
        
     }
 
     p, ul{
-        width: 594px;
+        width: 610px;
         margin:  0%;
         
     }
     .medien{
-        width: 594px;
+        width: 610px;
         margin:  0%;
         
     }
 
     #Tokyo{
-        width: 594px;
+        width: 610px;
         margin:  0%;
+        background-size: 610px;
     }
 
     #Events{
-        width: 594px;
+        width: 610px;
         margin:  0%;
+        background-size: 610px;
       }
 
     table {
-        width: 594px;
+        width: 610px;
         margin:  0%;
       }
 
@@ -269,11 +271,13 @@ nav:before {
     #Tokyo{
         width: 910px;
         margin:  0%;
+        background-size: 910px;
     }
 
     #Events{
         width: 910px;
         margin:  0%;
+        background-size: 910px;
       }
 
     table {
@@ -291,7 +295,7 @@ nav:before {
   
       }
     h2, h3{
-          width: 440px;
+          width: 400px;
           margin:  0%;
          
       }
