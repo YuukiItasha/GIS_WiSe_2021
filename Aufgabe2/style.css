@@ -286,7 +286,7 @@ nav:before {
     h1 {
         width: 340px;
         margin: 0%;
-        background-size: 340px;
+        
         
   
       }
@@ -310,11 +310,13 @@ nav:before {
       #Tokyo{
         width: 340px;
         margin:  0%;
+        background-size: 340px;
       }
 
       #Events{
         width: 340px;
         margin:  0%;
+        background-size: 340px;
       }
 
       table {
