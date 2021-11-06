@@ -3,11 +3,11 @@
 /**
  * @var {number} age: Bitte anstatt der 24 dein Alter eintragen
  */
-let age = 30;
+let age = 24;
 /**
  * @var {string} firstName: Bitte anstatt 'Max' deinen Vornamen eintragen
  */
-let firstName = `Sarah`;
+let firstName = `Max`;
 function func1(age) {
     return 2021 - age;
 }
@@ -24,7 +24,9 @@ function func2(name) {
     return func3();
 }
 /* -- HIER BITTE IHRE LÖSUNG ZUR AUFGABE 1 EINTRAGEN
- * ...
+ * -- Ich heiße Sarah.
+      Ich esse gerne Pizza.
+      Ich gehöre zur Generation Y.
  */
 // -- [Aufgabe 2]
 let events = [
@@ -41,7 +43,11 @@ let events = [
 ];
 // -- HIER BITTE IHRE LÖSUNG ZUR AUFGABE 2 EINTRAGEN
 // Lösung a) ...
+console.log(events.length);
 // Lösung b) ...
+for (var i = 0; i < events.length; i++) {
+    console.log(events[i]);
+}
 // Lösung c) ...
 // Lösung d) ...
 // Lösung e) ...
