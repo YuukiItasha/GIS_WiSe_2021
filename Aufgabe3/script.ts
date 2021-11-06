@@ -55,7 +55,13 @@ let events: any[][] = [
 
 // Lösung a) ...
 
+console.log(events.length); 
+
 // Lösung b) ...
+
+for (var i = 0; i < events.length; i++) {
+  console.log(events[i]);
+}
 
 // Lösung c) ...
 
