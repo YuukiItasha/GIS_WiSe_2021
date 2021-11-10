@@ -59,29 +59,16 @@ console.log(events[7][0], events[7][1]);
 console.log(events[8][0], events[8][1]);
 console.log(events[9][0], events[9][1]);
 // Lösung c) ...
-function max(..._events) {
-    let preise = _events[0][0];
-    for (let i = 0; i < _events.length; i++) {
-        const sNr = _events[i];
-        if (sNr < preise) {
-            preise = sNr;
+console.log(getHoechsterPreis(events));
+function getHoechsterPreis(_events) {
+    let max = _events[0][1];
+    for (let outerIndex = 0; outerIndex < events.length; outerIndex++) {
+        if (_events[outerIndex][1] > max) {
+            max = _events[outerIndex][1];
         }
     }
-    return preise;
+    return max;
 }
-let maxi = [
-    ["Mark Knopfler", 20],
-    ["Pink Floyd", 70],
-    ["Metallica", 90],
-    ["Michael Bublé", 30],
-    ["Dire Straits", 65],
-    ["Mariah Carey", 80],
-    ["Cat Stevens", 45],
-    ["Mark Forster", 40],
-    ["Helene Fischer", 10],
-    ["Bee Gees", 85],
-];
-console.log(...maxi);
 // Lösung d) ...
 // Lösung e) ...
 let faktorial = 1;
@@ -104,19 +91,29 @@ for (let i = 1; i <= 100; i++) {
 class ConcertEvent {
     interpret;
     price;
-    concertEvent;
-    constructor(interpret) {
+    constructor(interpret, price) {
         this.interpret = interpret;
-    }
-    preis() {
-        this.price++;
+        this.price = price;
     }
     show() {
         console.log(this.interpret, this.price);
     }
 }
+let c = new ConcertEvent("Hammerfall", 150);
+c.show();
 // Lösung h) ...
-let c = new ConcertEvent("Mark Knopfler");
-c.preis();
-console.log(c.show());
+let Concert = new Array;
+Concert[0] = new ConcertEvent("Mark Knopfler", 10.1);
+Concert[1] = new ConcertEvent("Pink Floyd", 15.9);
+Concert[2] = new ConcertEvent("Metallica", 20.1);
+Concert[3] = new ConcertEvent("Michael Bublé", 11.1);
+Concert[4] = new ConcertEvent("Dire Straits", 12.2);
+Concert[5] = new ConcertEvent("Mariah Carey", 1.1);
+Concert[6] = new ConcertEvent("Cat Stevens", 12.99);
+Concert[7] = new ConcertEvent("Mark Forster", 2.1);
+Concert[8] = new ConcertEvent("Helene Fischer", 3.1);
+Concert[9] = new ConcertEvent("Bee Gees", 25.2);
+for (let i = 0; i < Concert.length; i++) {
+    console.log(Concert[i]);
+}
 //# sourceMappingURL=script.js.map
