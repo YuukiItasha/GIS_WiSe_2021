@@ -45,19 +45,23 @@ let events = [
 // Lösung a) ...
 console.log(events.length);
 // Lösung b) ...
-/*for (var i = 0; i < events.length; i++) {
-  console.log(events[i]);
-}*/
-console.log(events[0][0], events[0][1]);
-console.log(events[1][0], events[1][1]);
-console.log(events[2][0], events[2][1]);
-console.log(events[3][0], events[3][1]);
-console.log(events[4][0], events[4][1]);
-console.log(events[5][0], events[5][1]);
-console.log(events[6][0], events[6][1]);
-console.log(events[7][0], events[7][1]);
-console.log(events[8][0], events[8][1]);
-console.log(events[9][0], events[9][1]);
+for (let i = 0; i < events.length; i++) {
+    for (let j = 0; j < events[i].length; j++) {
+        console.log(events[i][j]);
+    }
+}
+/*
+ console.log(events[0][0],events[0][1]);
+ console.log(events[1][0],events[1][1]);
+ console.log(events[2][0],events[2][1]);
+ console.log(events[3][0],events[3][1]);
+ console.log(events[4][0],events[4][1]);
+ console.log(events[5][0],events[5][1]);
+ console.log(events[6][0],events[6][1]);
+ console.log(events[7][0],events[7][1]);
+ console.log(events[8][0],events[8][1]);
+ console.log(events[9][0],events[9][1]);
+*/
 // Lösung c) ...
 console.log(getHoechsterPreis(events));
 function getHoechsterPreis(_events) {
