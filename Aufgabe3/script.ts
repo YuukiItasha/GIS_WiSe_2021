@@ -59,11 +59,14 @@
  
  // Lösung b) ...
  
- /*for (var i = 0; i < events.length; i++) {
-   console.log(events[i]);
- }*/
 
-
+ for (let i: number = 0; i < events.length; i++) {
+   for(let j: number = 0; j < events[i].length; j++){
+     console.log(events[i][j]);
+   }
+  
+ }
+/*
  console.log(events[0][0],events[0][1]);
  console.log(events[1][0],events[1][1]);
  console.log(events[2][0],events[2][1]);
@@ -74,7 +77,7 @@
  console.log(events[7][0],events[7][1]);
  console.log(events[8][0],events[8][1]);
  console.log(events[9][0],events[9][1]);
-
+*/
  
  // Lösung c) ...
 
@@ -151,7 +154,7 @@ c.show();
  
  // Lösung h) ...
 
- let Concert:any[10] = new Array;
+ let Concert:any[]= new Array;
  
  Concert[0] = new ConcertEvent("Mark Knopfler", 10.1);
  Concert[1] = new ConcertEvent("Pink Floyd", 15.9);
@@ -165,9 +168,8 @@ c.show();
  Concert[9] = new ConcertEvent("Bee Gees", 25.2);
 
  for(let i = 0;i<Concert.length;i++) { 
-   console.log(Concert[i]) 
+   
+     console.log(Concert[i]) 
+   
  }
-
-
-
 
