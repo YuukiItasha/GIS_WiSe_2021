@@ -3,11 +3,11 @@
 /**
  * @var {number} age: Bitte anstatt der 24 dein Alter eintragen
  */
-let age = 24;
+let age = 30;
 /**
  * @var {string} firstName: Bitte anstatt 'Max' deinen Vornamen eintragen
  */
-let firstName = `Max`;
+let firstName = `Sarah`;
 function func1(age) {
     return 2021 - age;
 }
@@ -45,13 +45,78 @@ let events = [
 // Lösung a) ...
 console.log(events.length);
 // Lösung b) ...
-for (var i = 0; i < events.length; i++) {
-    console.log(events[i]);
-}
+/*for (var i = 0; i < events.length; i++) {
+  console.log(events[i]);
+}*/
+console.log(events[0][0], events[0][1]);
+console.log(events[1][0], events[1][1]);
+console.log(events[2][0], events[2][1]);
+console.log(events[3][0], events[3][1]);
+console.log(events[4][0], events[4][1]);
+console.log(events[5][0], events[5][1]);
+console.log(events[6][0], events[6][1]);
+console.log(events[7][0], events[7][1]);
+console.log(events[8][0], events[8][1]);
+console.log(events[9][0], events[9][1]);
 // Lösung c) ...
+function max(..._events) {
+    let preise = _events[0][0];
+    for (let i = 0; i < _events.length; i++) {
+        const sNr = _events[i];
+        if (sNr < preise) {
+            preise = sNr;
+        }
+    }
+    return preise;
+}
+let maxi = [
+    ["Mark Knopfler", 20],
+    ["Pink Floyd", 70],
+    ["Metallica", 90],
+    ["Michael Bublé", 30],
+    ["Dire Straits", 65],
+    ["Mariah Carey", 80],
+    ["Cat Stevens", 45],
+    ["Mark Forster", 40],
+    ["Helene Fischer", 10],
+    ["Bee Gees", 85],
+];
+console.log(...maxi);
 // Lösung d) ...
 // Lösung e) ...
+let faktorial = 1;
+let nummer = 5;
+function factorial() {
+    while (nummer > 1) {
+        faktorial = faktorial * nummer;
+        nummer--;
+        console.log("The factorial  is " + faktorial);
+    }
+}
+factorial();
 // Lösung f) ...
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0) {
+        console.log(i);
+    }
+}
 // Lösung g) ...
+class ConcertEvent {
+    interpret;
+    price;
+    concertEvent;
+    constructor(interpret) {
+        this.interpret = interpret;
+    }
+    preis() {
+        this.price++;
+    }
+    show() {
+        console.log(this.interpret, this.price);
+    }
+}
 // Lösung h) ...
+let c = new ConcertEvent("Mark Knopfler");
+c.preis();
+console.log(c.show());
 //# sourceMappingURL=script.js.map
