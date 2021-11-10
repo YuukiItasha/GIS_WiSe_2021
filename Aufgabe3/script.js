@@ -70,6 +70,15 @@ function getHoechsterPreis(_events) {
     return max;
 }
 // Lösung d) ...
+console.log(Kuenstler(events, "Metallica"));
+function Kuenstler(_events, _kuenstlername) {
+    for (let outerIndex = 0; outerIndex < events.length; outerIndex++) {
+        if (_events[outerIndex][0] == _kuenstlername) {
+            return true;
+        }
+    }
+    return false;
+}
 // Lösung e) ...
 let faktorial = 1;
 let nummer = 5;
