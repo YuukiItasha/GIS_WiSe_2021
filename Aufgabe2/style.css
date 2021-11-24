@@ -328,3 +328,47 @@ nav:before {
         margin:  0%;
       }
 } 
+
+
+/* Neues ab Aufgabe 4 */
+
+.eButton{
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    background: #e0e1e2 none;
+    color: black;
+    margin: 0 0.25em 0 0;
+    padding: 0.78571429em 1.5em 0.78571429em;
+    font-weight: 700;
+    line-height: 1em;
+    text-align: center;
+    border-radius: 0.28571429rem;
+  }
+  
+    .eButton:hover{
+      background: #aeaeae;
+      cursor: pointer;
+    }
+
+form label{
+    font-size: 0.8em;
+    font-weight: 700;
+    display: block;
+    padding-left: 3px;
+}
+      
+#interpretPut, #pricePut, #dateTimePut{
+    border-radius: 0.28571429rem;
+    border: none;
+    padding: 0.67857143em 1em;
+    font-size: 1em;
+    line-height: 1.21428571em;
+}
+
+/* ---------------------------------
+events table
+--------------------------------- */
