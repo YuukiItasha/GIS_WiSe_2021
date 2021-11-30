@@ -14,5 +14,5 @@
 
 <h2> Aufgabe 4 </h2>
 <p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe4">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe3</a> </b>.</p>
-<p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe4/Event.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe3/Aufgabe3.html</a> </b>.</p>
+<p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe4/Event.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe4verbesserung/index.html</a> </b>.</p>
 
