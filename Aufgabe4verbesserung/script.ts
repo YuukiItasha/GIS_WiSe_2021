@@ -1,4 +1,5 @@
 namespace Aufgabe4{
+    
     const interpretInput: HTMLInputElement = <HTMLInputElement>(
     document.querySelector("#interpret")
     );
