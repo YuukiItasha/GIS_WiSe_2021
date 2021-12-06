@@ -1,48 +1,69 @@
 "use strict";
 var Aufgabe5;
 (function (Aufgabe5) {
-    const interpretInput = (document.querySelector("#interpret"));
-    const priceInput = (document.querySelector("#price"));
-    const enterbutton = (document.querySelector("#enter"));
-    const tbody = (document.querySelector("tbody"));
-    const saveButton = (document.getElementById("save-Button"));
-    const loadButton = (document.getElementById("load-button"));
-    const display = (document.getElementById("display"));
-    function saveButtonHandler() {
-        console.log("save");
-        interpretInput.value;
-        localStorage.setItem("storage-input", interpretInput.value);
-        priceInput.value;
-        localStorage.setItem("storage-input", priceInput.value);
+    window.addEventListener("load", init);
+    let inputInterpret;
+    let inputPrice;
+    let enterButton;
+    let displayTable;
+    let events = [];
+    function init(_event) {
+        inputInterpret = document.querySelector("#input-interpret");
+        inputPrice = document.querySelector("#input-price");
+        enterButton = document.querySelector("#input-enter");
+        enterButton.addEventListener("click", mybuttonHandler);
+        displayTable = document.querySelector("#display");
+        updateTableFromLocalStorage();
     }
-    function loadButtonHandler() {
-        console.log("load");
-        let localValue = localStorage.getItem("storage-input");
-        console.log(localValue);
-        display.textContent = localValue;
+    function mybuttonHandler() {
+        updateSingle();
     }
-    const deleteButton = (document.getElementById("delete"));
-    function enterEvent(_evt) {
-        _evt.preventDefault();
-        console.log(interpretInput.value);
-        console.log(priceInput.value);
+    function updateSingle() {
+        let inputEventData = {
+            interpret: inputInterpret.value,
+            price: +inputPrice.value,
+        };
+        events.push(inputEventData);
+        console.log(events);
+        let row = displayTable.insertRow();
+        insertDataInRow(row, inputEventData);
+        updateLocalStorage();
     }
-    function addRow(_e) {
-        _e.preventDefault();
-        tbody.innerHTML += `<tr><td>${interpretInput.value}</td><td>${priceInput.value}</td><td><button>Delete</button></td></tr>`;
-        let allButtons = document.querySelectorAll("button");
-        for (const ele of allButtons) {
-            ele.addEventListener("click", function () {
-                this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
-            });
+    function updateLocalStorage() {
+        localStorage.setItem("events", JSON.stringify(events));
+    }
+    function updateTableFromLocalStorage() {
+        let eventsString = localStorage.getItem("events");
+        if (!eventsString) {
+            return;
+        }
+        events = JSON.parse(eventsString);
+        for (let index = 0; index < events.length; index++) {
+            let row = displayTable.insertRow();
+            insertDataInRow(row, events[index]);
         }
     }
-    function deleteItem(ele) {
-        ele.parentElement.parentElement.parentElement.removeChild(ele.parentElement.parentElement);
+    function insertDataInRow(_row, _data) {
+        let interpretCell = document.createElement("td");
+        let priceCell = document.createElement("td");
+        let dateCell = document.createElement("td");
+        let timeCell = document.createElement("td");
+        let deleteButton = document.createElement("button");
+        let eventDataRow = { event: _data, row: _row };
+        deleteButton.addEventListener("click", onDeleteButton.bind(eventDataRow));
+        interpretCell.innerHTML = _data.interpret;
+        priceCell.innerHTML = _data.price.toString();
+        deleteButton.innerHTML = "delete";
+        _row.appendChild(interpretCell);
+        _row.appendChild(priceCell);
+        _row.appendChild(dateCell);
+        _row.appendChild(timeCell);
+        _row.appendChild(deleteButton);
     }
-    enterbutton.addEventListener("click", enterEvent);
-    enterbutton.addEventListener("click", addRow);
-    saveButton.addEventListener("click", saveButtonHandler);
-    loadButton.addEventListener("click", loadButtonHandler);
+    function onDeleteButton(_event) {
+        displayTable.deleteRow(this.row.rowIndex);
+        events = events.filter(event => event !== this.event);
+        updateLocalStorage();
+    }
 })(Aufgabe5 || (Aufgabe5 = {}));
 //# sourceMappingURL=script.js.map
