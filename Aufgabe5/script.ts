@@ -95,8 +95,6 @@ namespace Aufgabe5 {
 
         let interpretCell: HTMLTableCellElement = document.createElement("td");
         let priceCell: HTMLTableCellElement = document.createElement("td");
-        let dateCell: HTMLTableCellElement = document.createElement("td");
-        let timeCell: HTMLTableCellElement = document.createElement("td");
         let deleteButton: HTMLButtonElement = document.createElement("button");
 
         let eventDataRow: EventDataRow = { event: _data, row: _row }
@@ -109,8 +107,6 @@ namespace Aufgabe5 {
 
         _row.appendChild(interpretCell);
         _row.appendChild(priceCell);
-        _row.appendChild(dateCell);
-        _row.appendChild(timeCell);
         _row.appendChild(deleteButton);
     }
 
