@@ -1,79 +1,125 @@
-namespace Aufgabe5{
-    
-    const interpretInput: HTMLInputElement = <HTMLInputElement>(
-        document.querySelector("#interpret")
-    );
-    
-    const priceInput: HTMLInputElement = <HTMLInputElement>(
-        document.querySelector("#price")
-    );
-        
-    const enterbutton: HTMLElement = <HTMLElement>(
-       document.querySelector("#enter") 
-    );
-        
-    const tbody: HTMLTableSectionElement = <HTMLTableSectionElement>(
-        document.querySelector("tbody")
-    );
+namespace Aufgabe5 {
 
-    const saveButton: HTMLButtonElement = <HTMLButtonElement>(
-        document.getElementById("save-Button")
-    );
+    window.addEventListener("load", init);
 
-    const loadButton: HTMLButtonElement = <HTMLButtonElement>(
-        document.getElementById("load-button")
-    );
 
-    const display: HTMLDivElement = <HTMLDivElement>(
-        document.getElementById("display")
-    );
+    let inputInterpret: HTMLInputElement;
+    let inputPrice: HTMLInputElement;
 
-    function saveButtonHandler(): void{
-        console.log("save")
-        interpretInput.value;
-        localStorage.setItem("storage-input", interpretInput.value);
-        priceInput.value;
-        localStorage.setItem("storage-input", priceInput.value);
+
+    let enterButton: HTMLButtonElement;
+
+    let displayTable: HTMLTableElement;
+
+    let events: EventData[] = [];
+
+    interface EventData {
+        interpret: string,
+        price: number,
+
     }
 
-    function loadButtonHandler(): void{
-        console.log("load")
-        let localValue: string = localStorage.getItem("storage-input");
-        console.log(localValue);
-        display.textContent = localValue;
+
+
+    interface EventDataRow {
+        event: EventData,
+        row: HTMLTableRowElement
     }
 
-    const deleteButton: HTMLButtonElement = <HTMLButtonElement>(
-        document.getElementById("delete")
-    );
+    function init(_event: Event): void {
 
-    function enterEvent(_evt: Event){
-        _evt.preventDefault();
-        console.log(interpretInput.value);
-        console.log(priceInput.value);
-    }
-    
-    function addRow(_e: Event){
-    
-        _e.preventDefault();
-        tbody.innerHTML += `<tr><td>${interpretInput.value}</td><td>${priceInput.value}</td><td><button>Delete</button></td></tr>`;
-    
-        let allButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll("button");
-    
-        for ( const ele of allButtons ) {
-            ele.addEventListener("click", function() {
-                this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
-            });
-        }        
-    }
-    
-    function deleteItem(ele: HTMLButtonElement): void{
-        ele.parentElement.parentElement.parentElement.removeChild(ele.parentElement.parentElement);
+        inputInterpret = <HTMLInputElement>document.querySelector("#input-interpret");
+        inputPrice = <HTMLInputElement>document.querySelector("#input-price");
+
+
+        enterButton = <HTMLButtonElement>document.querySelector("#input-enter");
+        enterButton.addEventListener("click", mybuttonHandler);
+
+
+        displayTable = <HTMLTableElement>document.querySelector("#display");
+
+        updateTableFromLocalStorage();
     }
 
-    enterbutton.addEventListener("click", enterEvent);
-    enterbutton.addEventListener("click", addRow);
-    saveButton.addEventListener("click", saveButtonHandler);
-    loadButton.addEventListener("click", loadButtonHandler);
 
+    function mybuttonHandler() {
+        updateSingle();
+    }
+
+    function updateSingle(): void {
+
+
+
+        let inputEventData: EventData = {
+            interpret: inputInterpret.value,
+            price: +inputPrice.value,
+            
+        };
+
+        events.push(inputEventData);
+
+        console.log(events);
+
+
+        let row: HTMLTableRowElement = displayTable.insertRow();
+        insertDataInRow(row, inputEventData);
+
+
+        updateLocalStorage();
+    }
+
+    function updateLocalStorage(): void {
+        localStorage.setItem("events", JSON.stringify(events));
+    }
+
+    function updateTableFromLocalStorage(): void {
+
+        let eventsString: string = localStorage.getItem("events");
+        if (!eventsString) {
+            return;
+        }
+        events = <EventData[]>JSON.parse(eventsString);
+
+        for (let index: number = 0; index < events.length; index++) {
+
+            let row: HTMLTableRowElement = displayTable.insertRow();
+
+
+
+
+            insertDataInRow(row, events[index]);
+        }
+    }
+
+    function insertDataInRow(_row: HTMLTableRowElement, _data: EventData): void {
+
+        let interpretCell: HTMLTableCellElement = document.createElement("td");
+        let priceCell: HTMLTableCellElement = document.createElement("td");
+        let dateCell: HTMLTableCellElement = document.createElement("td");
+        let timeCell: HTMLTableCellElement = document.createElement("td");
+        let deleteButton: HTMLButtonElement = document.createElement("button");
+
+        let eventDataRow: EventDataRow = { event: _data, row: _row }
+        deleteButton.addEventListener("click", onDeleteButton.bind(eventDataRow));
+
+        interpretCell.innerHTML = _data.interpret;
+        priceCell.innerHTML = _data.price.toString();
+
+        deleteButton.innerHTML = "delete";
+
+        _row.appendChild(interpretCell);
+        _row.appendChild(priceCell);
+        _row.appendChild(dateCell);
+        _row.appendChild(timeCell);
+        _row.appendChild(deleteButton);
+    }
+
+    function onDeleteButton(this: EventDataRow, _event: MouseEvent): void {
+
+        displayTable.deleteRow(this.row.rowIndex);
+
+        events = events.filter(event => event !== this.event);
+
+        updateLocalStorage();
+    }
 }
