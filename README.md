@@ -20,3 +20,10 @@
 <p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe5">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe5</a> </b>.</p>
 <p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe5/index.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe5/index.html</a> </b>.</p>
 
+<h2> Aufgabe 6 </h2>
+<h3> Client </h3>
+<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6client">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6client</a> </b>.</p>
+<p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe6client/index.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe6client/index.html</a> </b>.</p>
+
+<h3> Server </h3>
+<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6server">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6server</a> </b>.</p>
