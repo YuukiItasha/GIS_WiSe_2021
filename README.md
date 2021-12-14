@@ -22,8 +22,8 @@
 
 <h2> Aufgabe 6 </h2>
 <h3> Client </h3>
-<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6client">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6client</a> </b>.</p>
-<p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe6client/index.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe6client/index.html</a> </b>.</p>
+<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6/Aufgabe6client">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6/Aufgabe6client</a> </b>.</p>
+<p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe6/Aufgabe6client/index.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe6/Aufgabe6client/index.html</a> </b>.</p>
 
 <h3> Server </h3>
-<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6server">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6server</a> </b>.</p>
+<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6/Aufgabe6server">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6/Aufgabe6server</a> </b>.</p>
