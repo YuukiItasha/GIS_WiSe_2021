@@ -46,8 +46,6 @@ var Aufgabe5;
     function insertDataInRow(_row, _data) {
         let interpretCell = document.createElement("td");
         let priceCell = document.createElement("td");
-        let dateCell = document.createElement("td");
-        let timeCell = document.createElement("td");
         let deleteButton = document.createElement("button");
         let eventDataRow = { event: _data, row: _row };
         deleteButton.addEventListener("click", onDeleteButton.bind(eventDataRow));
@@ -56,8 +54,6 @@ var Aufgabe5;
         deleteButton.innerHTML = "delete";
         _row.appendChild(interpretCell);
         _row.appendChild(priceCell);
-        _row.appendChild(dateCell);
-        _row.appendChild(timeCell);
         _row.appendChild(deleteButton);
     }
     function onDeleteButton(_event) {
