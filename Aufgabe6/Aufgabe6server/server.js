@@ -12,7 +12,7 @@ var Server;
         let url = new URL(request.url || "", `http://${request.headers.host}`);
         switch (url.pathname) {
             case "/":
-                response.write("Server has been reached");
+                response.write("Server erreichbar");
                 break;
             case "/convertDate":
                 let date = url.searchParams.get("date");
