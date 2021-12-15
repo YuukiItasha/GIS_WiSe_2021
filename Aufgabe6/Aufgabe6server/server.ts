@@ -5,7 +5,8 @@ namespace Server {
     const hostname: string = "127.0.0.1";
     const port: number = 3000;
 
-    const server: http.Server = http.createServer((request: http.IncomingMessage, response: http.ServerResponse) => {
+    const server: http.Server = http.createServer(
+        (request: http.IncomingMessage, response: http.ServerResponse) => {
 
         response.statusCode = 200;
         response.setHeader("Content-Type", "text/plain");
@@ -16,7 +17,7 @@ namespace Server {
 
         switch (url.pathname) {
             case "/":
-                response.write("Server has been reached");
+                response.write("Server erreichbar");
                 break;
             case "/convertDate":
                 let date: string = url.searchParams.get("date");
