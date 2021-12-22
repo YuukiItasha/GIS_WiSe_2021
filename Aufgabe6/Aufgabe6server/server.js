@@ -16,9 +16,8 @@ var Server;
                 break;
             case "/convertDate":
                 let date = url.searchParams.get("date");
-                let month = url.searchParams.get("month");
-                let year = url.searchParams.get("year");
-                response.write("Day:" + date + "; Month" + month + "; Year" + year);
+                console.log("Das eingegebene Datum lautet: " + date);
+                response.write("Das eingegebene Datum lautet: " + date);
                 break;
             default:
                 response.statusCode = 404;
@@ -26,7 +25,7 @@ var Server;
         response.end();
     });
     server.listen(port, hostname, () => {
-        console.log(`Server at http://${hostname}:${port}`);
+        console.log(`Server running at http://${hostname}:${port}`); //Wenn der Server erreichbar ist, soll folgendes ausgegeben werden.
     });
 })(Server || (Server = {}));
 //# sourceMappingURL=server.js.map
