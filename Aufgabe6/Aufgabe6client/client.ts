@@ -1,33 +1,34 @@
 namespace Client {
-    console.log("Client läuft");
-    const url: string = "http://127.0.0.1:3000";
-    const path: string = "/converteDate";
+    console.log("Client läuft"); //Testausgabe
 
-    const form: HTMLFormElement = <HTMLFormElement>document.getElementById("form");
-    const sendbutton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send-button");
-    const display: HTMLElement = <HTMLElement>document.getElementById("display");
+    const display: HTMLDivElement = <HTMLDivElement>( document.getElementById("display"));
 
-    sendbutton.addEventListener("click", function (evt: Event) {
-        evt.preventDefault();
-        sendform();
+    const url: string = "http://127.0.0.1:3000"; 
+    const path: string = "/convertDate"; 
+
+    const myForm: HTMLFormElement = <HTMLFormElement>document.getElementById("myform"); 
+    const sendButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send-button"); 
+
+    
+    sendButton.addEventListener("click", function(evt: Event){
+        evt.preventDefault(); 
+        sendForm(); 
     });
 
-    console.log(form, sendbutton);
+    console.log(myForm, sendButton);
 
 
+    async function sendForm(): Promise<void> {
 
-    async function sendform(): Promise<void> {
-        let formData: FormData = new FormData(form);
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let urlwithQuery: string = url + path + "?" + query.toString();
-
-        let response: Response = await fetch(urlwithQuery);
-        let responsetext: string = await response.text();
-        console.log(responsetext);
+       
+        let formData: FormData= new FormData(myForm); 
+        let query: URLSearchParams = new URLSearchParams(<any>formData); 
+        let urlWithQuery: string = url + path + "?" + query.toString(); 
 
 
-
-
-
+        let response: Response = await fetch(urlWithQuery);
+        let responseText: string = await response.text(); 
+        console.log(responseText);
+        display.textContent = responseText;
     }
 }
