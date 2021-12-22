@@ -1,24 +1,25 @@
 "use strict";
 var Client;
 (function (Client) {
-    console.log("Client läuft");
+    console.log("Client läuft"); //Testausgabe
+    const display = (document.getElementById("display"));
     const url = "http://127.0.0.1:3000";
-    const path = "/converteDate";
-    const form = document.getElementById("form");
-    const sendbutton = document.getElementById("send-button");
-    const display = document.getElementById("display");
-    sendbutton.addEventListener("click", function (evt) {
+    const path = "/convertDate";
+    const myForm = document.getElementById("myform");
+    const sendButton = document.getElementById("send-button");
+    sendButton.addEventListener("click", function (evt) {
         evt.preventDefault();
-        sendform();
+        sendForm();
     });
-    console.log(form, sendbutton);
-    async function sendform() {
-        let formData = new FormData(form);
+    console.log(myForm, sendButton);
+    async function sendForm() {
+        let formData = new FormData(myForm);
         let query = new URLSearchParams(formData);
-        let urlwithQuery = url + path + "?" + query.toString();
-        let response = await fetch(urlwithQuery);
-        let responsetext = await response.text();
-        console.log(responsetext);
+        let urlWithQuery = url + path + "?" + query.toString();
+        let response = await fetch(urlWithQuery);
+        let responseText = await response.text();
+        console.log(responseText);
+        display.textContent = responseText;
     }
 })(Client || (Client = {}));
 //# sourceMappingURL=client.js.map
