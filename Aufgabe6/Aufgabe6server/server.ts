@@ -32,7 +32,7 @@ namespace Server {
 
   
   server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}`); //Wenn der Server erreichbar ist, soll folgendes ausgegeben werden.
+    console.log(`Server running at http://${hostname}:${port}`); 
   });
 }
 
