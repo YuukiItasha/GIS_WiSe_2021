@@ -25,7 +25,7 @@ var Server;
         response.end();
     });
     server.listen(port, hostname, () => {
-        console.log(`Server running at http://${hostname}:${port}`); //Wenn der Server erreichbar ist, soll folgendes ausgegeben werden.
+        console.log(`Server running at http://${hostname}:${port}`);
     });
 })(Server || (Server = {}));
 //# sourceMappingURL=server.js.map
