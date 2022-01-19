@@ -1,30 +1,82 @@
 "use strict";
-var Aufgabe4;
-(function (Aufgabe4) {
-    const interpretInput = (document.querySelector("#interpret"));
-    const priceInput = (document.querySelector("#price"));
-    const enterbutton = (document.querySelector("#enter"));
-    const tbody = (document.querySelector("tbody"));
-    const deleteButton = (document.getElementById("delete"));
-    function enterEvent(_evt) {
-        _evt.preventDefault();
-        console.log(interpretInput.value);
-        console.log(priceInput.value);
+const inputIntpret = document.getElementById("interpretInput");
+const inputPrice = document.getElementById("priceInput");
+const output = document.getElementById("output");
+const myButton = document.getElementById("enterButton");
+myButton.addEventListener("click", mybuttonHandler);
+window.addEventListener("load", init);
+async function init(_event) {
+    console.log("Says: ", await get());
+    generateHTML(await get());
+}
+function mybuttonHandler() {
+    let interpretValue = inputIntpret.value;
+    let priceValue = Number(inputPrice.value);
+    const newDelete = document.createElement("button");
+    newDelete.textContent = "Delete Event";
+    newDelete.style.color = "red";
+    newDelete.className = "deleteButton";
+    newDelete.type = "submit";
+    newDelete.addEventListener("click", deleteButtonHandler);
+    const newInterpretElement = document.createElement("td");
+    newInterpretElement.textContent = interpretValue;
+    const newPriceElement = document.createElement("td");
+    newPriceElement.textContent = String(priceValue);
+    const newReihe = document.createElement("tr");
+    output.appendChild(newReihe);
+    newReihe.appendChild(newInterpretElement);
+    newReihe.appendChild(newPriceElement);
+    newReihe.appendChild(newDelete);
+    function deleteButtonHandler() {
+        newReihe.removeChild(newInterpretElement);
+        newReihe.removeChild(newPriceElement);
+        newReihe.removeChild(newDelete);
     }
-    function addRow(_e) {
-        _e.preventDefault();
-        tbody.innerHTML += `<tr><td>${interpretInput.value}</td><td>${priceInput.value}</td><td><button>Delete</button></td></tr>`;
-        let allButtons = document.querySelectorAll("button");
-        for (const ele of allButtons) {
-            ele.addEventListener("click", function () {
-                this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
-            });
+    let konzertEvent = {
+        interpret: interpretValue,
+        price: priceValue
+    };
+    post(konzertEvent);
+}
+async function post(konzertEvent) {
+    console.log(konzertEvent);
+    await fetch("http://localhost:27017", {
+        method: "POST",
+        body: JSON.stringify(konzertEvent)
+    });
+}
+async function get() {
+    let response = await fetch("http://localhost:27017", {
+        method: "GET"
+    });
+    let responseText = await response.text();
+    let konzertEvents = JSON.parse(responseText);
+    return konzertEvents;
+}
+function generateHTML(events) {
+    events.forEach(event => {
+        let interpretValue = event.interpret;
+        let priceValue = Number(event.price);
+        const newDelete = document.createElement("button");
+        newDelete.textContent = "Delete Event";
+        newDelete.style.color = "red";
+        newDelete.className = "deleteButton";
+        newDelete.type = "submit";
+        newDelete.addEventListener("click", deleteButtonHandler);
+        function deleteButtonHandler() {
+            newReihe.removeChild(newInterpretElement);
+            newReihe.removeChild(newPriceElement);
+            newReihe.removeChild(newDelete);
         }
-    }
-    function deleteItem(ele) {
-        ele.parentElement.parentElement.parentElement.removeChild(ele.parentElement.parentElement);
-    }
-    enterbutton.addEventListener("click", enterEvent);
-    enterbutton.addEventListener("click", addRow);
-})(Aufgabe4 || (Aufgabe4 = {}));
+        const newInterpretElement = document.createElement("td");
+        newInterpretElement.textContent = interpretValue;
+        const newPriceElement = document.createElement("td");
+        newPriceElement.textContent = String(priceValue);
+        const newReihe = document.createElement("tr");
+        output.appendChild(newReihe);
+        newReihe.appendChild(newInterpretElement);
+        newReihe.appendChild(newPriceElement);
+        newReihe.appendChild(newDelete);
+    });
+}
 //# sourceMappingURL=client.js.map

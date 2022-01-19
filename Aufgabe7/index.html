@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Eventpage</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta name="author" content="Sarah Kauz" />
+
+    <script src="client.js" defer></script>
 </head>
+
 <body>
-    <form>
-        <label for="interpret">Interpret:</label>
-        <input type="text" id="interpret" name="interpret">
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price">
-        <input type="submit" id="enter" value="Enter Event">
-      </form>
-      <br>
-      <br>
-      <table id="tbody" border="1">
-        <tr>
-            <th>Interpret</th>
-            <th>Price</th> 
-            <th>Delete</th>
-        </tr>
-      </table>
+    <div class="container">
+
+        <main id="main">
+            <form id="KonzertEvent"></form>
+            <label for="interpretInput">Interpret</label>
+            <input type="text" name="interpret" id="interpretInput" placeholder="Interpret">
+            <label for="priceInput">Price</label>
+            <input type="number" name="price" id="priceInput" placeholder="Price">
+            <button id="enterButton" type="submit">Enter Event</button>
+            </form>
+            <div id="output">
+                <h4>Events </h4>
+                <tr>
+                    <th id="interpretSpalte">Interpret</th>
+                    <th id="priceSpalte">Price</th>
+                    <th id="deleteSpalte"></th>
+                </tr>
+            </div>
+        </main>
+        <footer>
+            <p>Seite erstellt am 02. Januar 2022.</p>
+        </footer>
+    </div>
 </body>
+
 </html>
