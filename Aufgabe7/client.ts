@@ -1,6 +1,6 @@
 const inputIntpret: HTMLInputElement = <HTMLInputElement>document.getElementById("interpretInput");
 const inputPrice: HTMLInputElement = <HTMLInputElement>document.getElementById("priceInput");
-const output: HTMLElement = <HTMLElement>document.getElementById("output");
+
 const myButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("enterButton");
 myButton.addEventListener("click", mybuttonHandler);
 
@@ -36,7 +36,7 @@ function mybuttonHandler(): void {
     newPriceElement.textContent = String(priceValue);
     const newReihe: HTMLTableRowElement = document.createElement("tr");
 
-    output.appendChild(newReihe);
+   
     newReihe.appendChild(newInterpretElement);
     newReihe.appendChild(newPriceElement);
     newReihe.appendChild(newDelete);
@@ -56,7 +56,7 @@ function mybuttonHandler(): void {
 
 async function post(konzertEvent: KonzertEvent): Promise<void> {
     console.log(konzertEvent);
-    await fetch("http://localhost:8100/EventOrdner", {
+    await fetch("http://localhost:8100/concertEvents", {
         method: "POST",
         body: JSON.stringify(konzertEvent)
     });
@@ -66,7 +66,7 @@ async function post(konzertEvent: KonzertEvent): Promise<void> {
 
 async function get(): Promise<KonzertEvent[]> {
 
-    let response: Response = await fetch("http://localhost:8100/EventOrdner", {
+    let response: Response = await fetch("http://localhost:8100/concertEvents", {
         method: "GET"
     });
 
@@ -100,7 +100,7 @@ function generateHTML(events: KonzertEvent[]) {
         newPriceElement.textContent = String(priceValue);
         const newReihe: HTMLTableRowElement = document.createElement("tr");
 
-        output.appendChild(newReihe);
+
         newReihe.appendChild(newInterpretElement);
         newReihe.appendChild(newPriceElement);
         newReihe.appendChild(newDelete);
