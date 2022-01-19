@@ -68,7 +68,7 @@ export namespace EventTabelle {
     async function writeEventToDB(event: MongoKonzertEvent): Promise<void> {
         await mongoClient.connect();
 
-        await mongoClient.db("db").collection("EventOr").replaceOne({
+        await mongoClient.db("concertEvents").collection("Events").replaceOne({
             _id: event._id
         },
             event
@@ -91,7 +91,7 @@ export namespace EventTabelle {
         let url: URL = new URL(request.url || "", `http://${request.headers.host}`);
 
         switch (url.pathname) {
-            case "/EventOrdner": {
+            case "/concertEvents": {
                 switch (request.method) {
                     case "GET":
                         await dbFind(
