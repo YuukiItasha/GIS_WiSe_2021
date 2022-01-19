@@ -56,7 +56,7 @@ function mybuttonHandler(): void {
 
 async function post(konzertEvent: KonzertEvent): Promise<void> {
     console.log(konzertEvent);
-    await fetch("http://localhost:5500/concertEvents", {
+    await fetch("http://localhost:8100/EventOr", {
         method: "POST",
         body: JSON.stringify(konzertEvent)
     });
@@ -66,7 +66,7 @@ async function post(konzertEvent: KonzertEvent): Promise<void> {
 
 async function get(): Promise<KonzertEvent[]> {
 
-    let response: Response = await fetch("http://localhost:5500/concertEvents", {
+    let response: Response = await fetch("http://localhost:8100/EventOr", {
         method: "GET"
     });
 
