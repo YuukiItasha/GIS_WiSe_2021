@@ -27,3 +27,7 @@
 
 <h3> Server </h3>
 <p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6/Aufgabe6server">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe6/Aufgabe6server</a> </b>.</p>
+
+<h2> Aufgabe 7 </h2>
+<p>Link zum Github Ordner <b><a href="https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe7">https://github.com/YuukiItasha/GIS_WiSe_2021/tree/main/Aufgabe7</a> </b>.</p>
+<p>Link zur Github Page <b><a href="https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe7/index.html">https://yuukiitasha.github.io/GIS_WiSe_2021/Aufgabe7/index.html</a> </b>.</p>
