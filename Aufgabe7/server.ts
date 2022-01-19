@@ -6,8 +6,8 @@ import { MongoClient, ObjectId } from "mongodb";
 export namespace EventTabelle {
 
     const hostname: string = "127.0.0.1";
-    const port: number = 27017;
-    const mongoUrl: string = "mongodb://localhost:27017/EventOrdner/EventOr";
+    const port: number = 8100;
+    const mongoUrl: string = "mongodb://localhost:27017";
     let mongoClient: mongo.MongoClient = new mongo.MongoClient(mongoUrl);
 
     interface KonzertEvent {
