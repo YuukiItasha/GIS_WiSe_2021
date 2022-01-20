@@ -2,6 +2,10 @@
   "dependencies": {
     "@types/node": "^16.11.12",
     "mongo": "^0.1.0",
-    "mongodb": "^4.3.1"
+    "mongodb": "^4.3.1",
+    "mongos": "^0.0.0"
+  },
+  "scripts": {
+    "start": "node Aufgabe7/server.js"
   }
 }

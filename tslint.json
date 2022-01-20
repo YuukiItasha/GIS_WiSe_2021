@@ -34,7 +34,7 @@
     ],
     "no-trailing-whitespace": false,
     "no-unused-expression": true,
-    "no-unused-variable": true,
+    "no-unused-variable": false,
     "no-use-before-declare": true,
     "no-var-requires": false,
     "no-conditional-assignment": true,

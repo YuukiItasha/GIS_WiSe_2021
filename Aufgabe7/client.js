@@ -1,7 +1,7 @@
 "use strict";
 const inputIntpret = document.getElementById("interpretInput");
 const inputPrice = document.getElementById("priceInput");
-const output = document.getElementById("output");
+const outputt = document.getElementById("output");
 const myButton = document.getElementById("enterButton");
 myButton.addEventListener("click", mybuttonHandler);
 window.addEventListener("load", init);
@@ -23,7 +23,7 @@ function mybuttonHandler() {
     const newPriceElement = document.createElement("td");
     newPriceElement.textContent = String(priceValue);
     const newReihe = document.createElement("tr");
-    output.appendChild(newReihe);
+    outputt.appendChild(newReihe);
     newReihe.appendChild(newInterpretElement);
     newReihe.appendChild(newPriceElement);
     newReihe.appendChild(newDelete);
@@ -40,13 +40,13 @@ function mybuttonHandler() {
 }
 async function post(konzertEvent) {
     console.log(konzertEvent);
-    await fetch("http://localhost:27017", {
+    await fetch("http://localhost:8100/events", {
         method: "POST",
         body: JSON.stringify(konzertEvent)
     });
 }
 async function get() {
-    let response = await fetch("http://localhost:27017", {
+    let response = await fetch("http://localhost:8100/events", {
         method: "GET"
     });
     let responseText = await response.text();
@@ -73,7 +73,7 @@ function generateHTML(events) {
         const newPriceElement = document.createElement("td");
         newPriceElement.textContent = String(priceValue);
         const newReihe = document.createElement("tr");
-        output.appendChild(newReihe);
+        outputt.appendChild(newReihe);
         newReihe.appendChild(newInterpretElement);
         newReihe.appendChild(newPriceElement);
         newReihe.appendChild(newDelete);

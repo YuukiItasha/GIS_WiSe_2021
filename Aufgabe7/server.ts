@@ -3,12 +3,20 @@ import * as mongo from "mongodb";
 import { MongoClient, ObjectId } from "mongodb";
 
 
+
 export namespace EventTabelle {
 
     const hostname: string = "127.0.0.1";
     const port: number = 8100;
-    const mongoUrl: string = "mongodb://localhost:27017";
-    let mongoClient: mongo.MongoClient = new mongo.MongoClient(mongoUrl);
+    const mongoUrl: string = "mongodb://127.0.0.1:27017";
+    let mongoClient: mongo.MongoClient = new MongoClient(mongoUrl);
+    MongoClient.connect(mongoUrl+ "/EventOrdner", function(err, db) {
+        if (err) {
+          throw err;
+        }
+        console.log('db connected');
+        db.close();
+      });
 
     interface KonzertEvent {
         interpret: string;
@@ -60,18 +68,24 @@ export namespace EventTabelle {
 
             await writeEventToDB(mongoKonzertEvent);
 
-
+            
+            response.statusCode = 200;
+            response.end();
+            
         });
+
     }
 
 
     async function writeEventToDB(event: MongoKonzertEvent): Promise<void> {
-        await mongoClient.connect();
+        const result = await mongoClient.connect();
+        console.log(result);
+        
 
-        await mongoClient.db("concertEvents").collection("Events").replaceOne({
+        await mongoClient.db("EventOrdner").collection("EventOr").replaceOne({
             _id: event._id
         },
-            event
+            event,{upsert: true}
         );
 
 
@@ -91,11 +105,11 @@ export namespace EventTabelle {
         let url: URL = new URL(request.url || "", `http://${request.headers.host}`);
 
         switch (url.pathname) {
-            case "/concertEvents": {
+            case "/events": {
                 switch (request.method) {
                     case "GET":
                         await dbFind(
-                            "db",
+                            "EventOrdner",
                             "EventOr",
                             response
                         );

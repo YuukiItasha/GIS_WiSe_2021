@@ -2,14 +2,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventTabelle = void 0;
 const http = require("http");
-const mongo = require("mongodb");
 const mongodb_1 = require("mongodb");
 var EventTabelle;
 (function (EventTabelle) {
     const hostname = "127.0.0.1";
-    const port = 27017;
-    const mongoUrl = "mongodb://localhost:27017";
-    let mongoClient = new mongo.MongoClient(mongoUrl);
+    const port = 8100;
+    const mongoUrl = "mongodb://127.0.0.1:27017";
+    let mongoClient = new mongodb_1.MongoClient(mongoUrl);
+    mongodb_1.MongoClient.connect(mongoUrl + "/EventOrdner", function (err, db) {
+        if (err) {
+            throw err;
+        }
+        console.log('db connected');
+        db.close();
+    });
     async function dbFind(db, collection, response) {
         mongoClient.connect();
         let result = await mongoClient
@@ -33,13 +39,16 @@ var EventTabelle;
             };
             console.log("incomingevent: ", jsonString);
             await writeEventToDB(mongoKonzertEvent);
+            response.statusCode = 200;
+            response.end();
         });
     }
     async function writeEventToDB(event) {
-        await mongoClient.connect();
-        await mongoClient.db("db").collection("Events").replaceOne({
+        const result = await mongoClient.connect();
+        console.log(result);
+        await mongoClient.db("EventOrdner").collection("EventOr").replaceOne({
             _id: event._id
-        }, event);
+        }, event, { upsert: true });
         await mongoClient.close();
     }
     const server = http.createServer();
@@ -50,10 +59,10 @@ var EventTabelle;
         response.setHeader("Access-Control-Allow-Origin", "*");
         let url = new URL(request.url || "", `http://${request.headers.host}`);
         switch (url.pathname) {
-            case "/concertEvents": {
+            case "/events": {
                 switch (request.method) {
                     case "GET":
-                        await dbFind("db", "Events", response);
+                        await dbFind("EventOrdner", "EventOr", response);
                         break;
                     case "POST":
                         await dbAddOrEdit(request, response);
