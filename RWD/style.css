@@ -58,8 +58,8 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  position: relative; /* Kontext für z-index */
-  z-index: 10; /* Header bleibt über anderen Elementen */
+  position: relative; 
+  z-index: 10; 
   
 }
 
@@ -70,8 +70,8 @@ html {
 }
 
 .logo img {
-  max-height: 150px; /* Maximale Höhe des Logos */
-  width: auto; /* Beibehaltung des Seitenverhältnisses */
+  max-height: 150px; 
+  width: auto; 
 }
 
 .navigation ul {
@@ -80,9 +80,9 @@ html {
   padding: 0;
   display: flex;
   gap: 30px;
-  height: 100%; /* Gleiche Höhe wie der Header */
-  align-items: center; /* Vertikale Zentrierung der Links */
-  flex-direction: column; /* Navigation vertikal anzeigen */
+  height: 100%; 
+  align-items: center; 
+  flex-direction: column; 
   gap: 10px;
 }
 
@@ -94,7 +94,7 @@ html {
   }
 
   .navigation ul {
-      flex-direction: row; /* Navigation horizontal anzeigen */
+      flex-direction: row; 
       gap: 30px;
   }
 }
@@ -113,7 +113,7 @@ html {
 }
 
 .hero-section {
-  background-image: url('bilder/background.jpg'); 
+  background-image: url('Bilder/background.jpg'); 
   background-size: cover; 
   background-position: center; 
   color: #E5E5E5; 
@@ -139,9 +139,9 @@ html {
 }
 
 .hero-content h1 {
-  font-size: clamp(5rem, 8vw, 16rem); /* Minimum 2rem, Maximum 6rem */
+  font-size: clamp(5rem, 8vw, 16rem); 
   margin: 0 0 50px;
-  text-align: center; /* Für eine bessere mobile Darstellung */
+  text-align: center; 
 }
 
 
@@ -169,11 +169,9 @@ html {
   margin-top: 20px; 
 }
 
-
 .hero-button:hover {
   opacity: 0.8; 
 }
-
 
 .about-section {
   background-color: #EADEF6;
