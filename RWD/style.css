@@ -1,16 +1,14 @@
 * {
   font-family: 'Josefin Sans', sans-serif;
 }
-/* Mobile (Standard, keine Media Query benötigt) */
 
-/* Tablet (min-width: 768px) */
 @media (min-width: 768px) {
-    /* Anpassungen für Tablets */
+ 
 }
 
-/* Desktop (min-width: 1200px) */
+
 @media (min-width: 1200px) {
-    /* Anpassungen für Desktops */
+  
 }
 body {
   margin: 0;
