@@ -1,0 +1,787 @@
+/* styles.css */
+* {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.banner {
+  background-color: #BAB5CD;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  color: #000000;
+}
+
+.banner-text {
+  margin: 0;
+}
+
+.banner-button {
+  background-color: #F3E7FF;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  border: none; /* Entfernt eventuelle Standardrahmen */
+}
+  
+.banner-button:hover {
+  opacity: 0.8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* styles.css */
+
+.main-header {
+  background-color: #F3E7FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  height: 50px; /* Feste Höhe für den Header */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Passt die Logo-Höhe an die Header-Höhe an */
+}
+
+.logo img {
+  max-height: 150px; /* Maximale Höhe des Logos */
+  width: auto; /* Beibehaltung des Seitenverhältnisses */
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  height: 100%; /* Gleiche Höhe wie der Header */
+  align-items: center; /* Vertikale Zentrierung der Links */
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.navigation a:hover {
+  opacity: 0.7;
+}
+
+/* styles.css */
+
+/* Hero-Bereich */
+.hero-section {
+  background-image: url('bilder/background.jpg'); /* Relativer Pfad zum Bild */
+  background-size: cover; /* Bild füllt den gesamten Bereich */
+  background-position: center; /* Zentriert das Bild */
+  color: #E5E5E5; /* Weiße Schriftfarbe */
+  text-align: center; /* Zentrierter Text */
+  padding: 250px 20px; /* Abstand innen für den Inhalt */
+  position: relative;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dunkler Overlay-Effekt */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 7rem; /* Große Schrift für die Überschrift */
+  margin: 0 0 50px; /* Abstand nach unten */
+}
+
+.hero-content p {
+  font-size: 3rem; /* Textgröße für den Untertitel */
+  margin: 0 0 30px;
+}
+.hero-content p {
+  font-size: 3rem; /* Textgröße für den Untertitel */
+  margin: 0 0 60px; /* Abstand nach unten erhöhen */
+  padding-bottom: 50px; /* Fügt mehr Platz unterhalb des Textes hinzu */
+}
+
+.hero-button {
+  background-color: #F3E7FF; /* Button-Farbe */
+  color: #000000; /* Schwarze Schrift */
+  text-decoration: none;
+  padding: 30px 60px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px; /* Abstand nach oben */
+}
+
+
+.hero-button:hover {
+  opacity: 0.8; /* Hover-Effekt */
+}
+
+/* Über Uns - Abschnitt */
+.about-section {
+  background-color: #EADEF6;
+  padding: 50px 20px; /* Abstand innen */
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto; /* Zentriert den Container */
+  gap: 20px;
+}
+
+.about-image {
+  flex: 1.1;
+  text-align: center; /* Zentriert das Bild */
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px; /* Optionale Abrundung */
+}
+
+.about-text {
+  flex: 2;
+  color: #000000;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #262626; /* Dunkleres Grau */
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Spendenprojekte */
+.donation-projects {
+  background-color: #F2EEFF;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.donation-projects h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #262626;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-box {
+  background-color: #EADEF6;
+  padding: 0; /* Entfernt zusätzliches Padding oben */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-box img {
+  width: 100%; /* Füllt die gesamte Breite der Box */
+  height: 150px; /* Einheitliche Höhe für alle Bilder */
+  object-fit: cover; /* Zuschneiden des Bildes, falls nötig */
+  margin: 0; /* Entfernt eventuelle Abstände */
+}
+
+.project-box h3 {
+  font-size: 1.5rem;
+  color: #262626;
+  margin: 20px 0 15px;
+  padding: 0 10px;
+}
+
+.project-box p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0 10px 20px;
+  flex-grow: 1; /* Füllt den verfügbaren Platz */
+}
+
+
+.project-button {
+  background-color: #BAB5CD;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px; /* Innenabstand */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px auto; /* Zentriert den Button */
+  max-width: 150px; /* Maximale Breite des Buttons */
+  display: block; /* Blockelement, um zentriert zu bleiben */
+  text-align: center; /* Text im Button zentrieren */
+}
+
+
+.project-button:hover {
+  opacity: 0.8;
+}
+
+
+
+/* Kunstgalerie */
+.art-gallery {
+  background-color: #EADEF6;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.art-gallery h2 {
+  font-size: 2rem;
+  color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.art-gallery .arrow {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #262626;
+  user-select: none;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%; /* Begrenze die sichtbare Breite */
+  max-width: 1200px; /* Optional: Maximale Breite für große Bildschirme */
+  margin: 0 auto; /* Zentriert das Karussell */
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 15px; /* Abstand zwischen den Bildern */
+  transition: transform 0.5s ease-in-out; /* Weicher Übergang */
+  will-change: transform; /* Optimierung für flüssige Animationen */
+}
+
+.carousel img {
+  flex-shrink: 0;
+  width: 300px; /* Breite eines Bildes */
+  height: 480px; /* Höhe eines Bildes */
+  object-fit: cover; /* Zuschneiden, um die Höhe zu halten */
+}
+
+
+.carousel img:last-child {
+  margin-right: 0; /* Entfernt den Abstand nach dem letzten Bild */
+}
+
+
+.event-calendar {
+  background-color: #F2EEFF;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.event-calendar h2 {
+  font-size: 2.5rem;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+.calendar-description {
+  font-size: 1rem;
+  color: #262626;
+  line-height: 1.6;
+  margin: 20px auto; /* Vertikaler Abstand */
+  padding: 0 40px; /* Horizontaler Abstand von den Rändern */
+  max-width: 800px; /* Begrenzung der maximalen Breite */
+  text-align: center; /* Zentriert den Text */
+}
+
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Abstand zwischen den Boxen */
+  max-width: 1200px; /* Maximale Breite der Event-Kästen */
+  margin: 0 auto; /* Zentriert die Liste */
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  background-color: #EADEF6;
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 30px; /* Abstand zwischen Datum, Details und Button */
+  width: 100%; /* Füllt die Breite der Liste aus */
+  max-width: 1200px; /* Breite der Boxen */
+  margin: 0 auto; /* Zentriert jede Box */
+}
+
+
+.event-date {
+  font-size: 1rem; /* Kleinere Schriftgröße */
+  font-weight: bold;
+  color: #262626;
+  text-align: center;
+  min-width: 100px; /* Stellt sicher, dass das Datum Platz hat */
+  line-height: 1; /* Kompakte Darstellung */
+  align-self: flex-start; /* Positioniert das Datum oben */
+  margin-top: 5px; /* Passt die Position fein an */
+}
+
+
+.event-details {
+  flex: 1; /* Nimmt den verfügbaren Platz ein */
+  text-align: left;
+  margin-right: 30px; /* Abstand zum Button */
+}
+
+.event-details h3 {
+  font-size: 1.5rem;
+  color: #262626;
+  margin: 0; /* Entfernt zusätzlichen Platz oben und unten */
+}
+
+.event-details p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+  margin: 10px 0 0; /* Abstand nur nach oben */
+}
+
+.event-button {
+  background-color: #BAB5CD;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0px;
+  white-space: nowrap;
+  flex-shrink: 0; /* Verhindert, dass der Button verkleinert wird */
+}
+
+.event-button:hover {
+  opacity: 0.8;
+}
+
+
+.artist-section {
+  background-color: #EADEF6;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.artist-section h2 {
+  font-size: 2.5rem;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+.artist-description {
+  font-size: 1rem;
+  color: #262626;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.artist-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.artist-item {
+  background-color: #F2EEFF;
+  border-radius: 0px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.artist-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-bottom: 15px;
+}
+
+.artist-item h3 {
+  font-size: 1.5rem;
+  color: #262626;
+  margin-bottom: 10px;
+}
+
+.artist-item p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+}
+
+
+.contact-section {
+  background-color: #F2EEFF;
+  padding: 50px 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.contact-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+.contact-form {
+  flex: 1;
+  background-color: #F2EEFF;
+  padding: 20px 30px;
+  border-radius: 0px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+.contact-form p {
+  font-size: 1rem;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #262626;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Einheitliche Breite */
+    padding: 10px;
+    font-size: 1rem;
+    color: #262626;
+    background-color: #EADEF6;
+    border: none;
+    border-radius: 0px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group select {
+    appearance: none; /* Entfernt Standard-Pfeile des Dropdowns (optional) */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23262626' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Pfeil rechtsbündig platzieren */
+    background-size: 10px; /* Größe des Pfeils */
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button {
+  background-color: #BAB5CD;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #a49ab7;
+  opacity: 0.9;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center; /* Zentriert Checkbox und Text vertikal */
+  gap: 10px; /* Abstand zwischen Checkbox und Label */
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px; /* Größe der Checkbox */
+  height: 20px; /* Größe der Checkbox */
+  margin: 0; /* Entfernt Standard-Abstand */
+  border: 2px solid #BAB5CD; /* Rahmenfarbe passend zur Gestaltung */
+  background-color: #EADEF6; /* Hintergrundfarbe */
+  border-radius: 0px; /* Optionale Abrundung */
+  appearance: none; /* Entfernt Standard-Styling der Checkbox */
+  cursor: pointer; /* Zeigt den Zeiger für Interaktivität */
+  position: relative; /* Ermöglicht das Hinzufügen des Häkchens */
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #BAB5CD; /* Farbe der Checkbox, wenn sie ausgewählt ist */
+  border-color: #BAB5CD; /* Rahmenfarbe, wenn ausgewählt */
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: '✓'; /* Häkchen-Symbol */
+  font-size: 14px;
+  color: #FFFFFF; /* Farbe des Häkchens */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-group label {
+  font-size: 1rem;
+  color: #262626;
+  line-height: 1.2;
+}
+
+.newsletter-section {
+  background-color: #EADEF6;
+  padding: 50px 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+.newsletter-container {
+  background-color: #F2EEFF;
+  padding: 30px 20px;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-container h2 {
+  font-size: 2rem;
+  color: #262626;
+  margin-bottom: 10px;
+}
+
+.newsletter-container p {
+  font-size: 1rem;
+  color: #262626;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.newsletter-form .form-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #EADEF6;
+  border: none;
+  border-radius: 0px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-button {
+  background-color: #BAB5CD;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #a49ab7;
+  opacity: 0.9;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 2px solid #BAB5CD;
+  background-color: #EADEF6;
+  border-radius: 0px;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #BAB5CD;
+  border-color: #BAB5CD;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: '✓';
+  font-size: 14px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-group label {
+  font-size: 1rem;
+  color: #262626;
+}
+
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-media a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-media a img:hover {
+  transform: scale(1.1);
+}
+
+
+.footer {
+  background-color: #F2EEFF;
+  padding: 150px 20px; /* Padding oben und unten, um genügend Platz für das Logo zu schaffen */
+  font-family: 'Josefin Sans', sans-serif;
+  color: #262626;
+  position: relative; /* Ermöglicht absolute Positionierung von Elementen innerhalb des Footers */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Elemente links und rechts haben Abstand */
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* Kontext für absolute Positionierung des Logos */
+}
+
+.footer-center {
+  position: absolute; /* Ermöglicht unabhängige Positionierung des Logos */
+  top: 50%; /* Positioniert das Logo vertikal in der Mitte des Footers */
+  left: 50%; /* Positioniert das Logo horizontal in der Mitte */
+  transform: translate(-50%, -50%); /* Korrigiert die Verschiebung für exakte Zentrierung */
+}
+
+.footer-center img {
+  height: 300px; /* Passe die Größe des Logos an */
+}
+
+.footer-left,
+.footer-right {
+  font-size: 1rem;
+  color: #262626;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: #262626;
+  margin-right: 10px;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  text-align: right;
+}
