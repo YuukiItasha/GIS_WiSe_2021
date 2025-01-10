@@ -111,7 +111,7 @@ html {
 }
 
 .hero-section {
-  background-image: url('Bilder/background.jpg'); 
+  background-image: url('/RWD/Bilder/background.jpg'); 
   background-size: cover; 
   background-position: center; 
   color: #E5E5E5; 
