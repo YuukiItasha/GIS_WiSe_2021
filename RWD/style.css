@@ -1,8 +1,17 @@
-/* styles.css */
 * {
   font-family: 'Josefin Sans', sans-serif;
 }
+/* Mobile (Standard, keine Media Query benötigt) */
 
+/* Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+    /* Anpassungen für Tablets */
+}
+
+/* Desktop (min-width: 1200px) */
+@media (min-width: 1200px) {
+    /* Anpassungen für Desktops */
+}
 body {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
@@ -28,7 +37,7 @@ body {
   padding: 10px 15px;
   font-weight: bold;
   font-size: 14px;
-  border: none; /* Entfernt eventuelle Standardrahmen */
+  border: none; 
 }
   
 .banner-button:hover {
@@ -39,22 +48,25 @@ html {
   scroll-behavior: smooth;
 }
 
-
-/* styles.css */
-
 .main-header {
   background-color: #F3E7FF;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  height: 50px; /* Feste Höhe für den Header */
+  position: relative; /* Kontext für z-index */
+  z-index: 10; /* Header bleibt über anderen Elementen */
+  
 }
 
 .logo {
   display: flex;
   align-items: center;
-  height: 100%; /* Passt die Logo-Höhe an die Header-Höhe an */
+  height: 100%; 
 }
 
 .logo img {
@@ -70,7 +82,23 @@ html {
   gap: 30px;
   height: 100%; /* Gleiche Höhe wie der Header */
   align-items: center; /* Vertikale Zentrierung der Links */
+  flex-direction: column; /* Navigation vertikal anzeigen */
+  gap: 10px;
 }
+
+@media (min-width: 768px) {
+  .main-header {
+      flex-direction: row;
+      align-items: center;
+      padding: 15px 40px;
+  }
+
+  .navigation ul {
+      flex-direction: row; /* Navigation horizontal anzeigen */
+      gap: 30px;
+  }
+}
+
 
 .navigation a {
   text-decoration: none;
@@ -84,16 +112,13 @@ html {
   opacity: 0.7;
 }
 
-/* styles.css */
-
-/* Hero-Bereich */
 .hero-section {
-  background-image: url('bilder/background.jpg'); /* Relativer Pfad zum Bild */
-  background-size: cover; /* Bild füllt den gesamten Bereich */
-  background-position: center; /* Zentriert das Bild */
-  color: #E5E5E5; /* Weiße Schriftfarbe */
-  text-align: center; /* Zentrierter Text */
-  padding: 250px 20px; /* Abstand innen für den Inhalt */
+  background-image: url('bilder/background.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  color: #E5E5E5; 
+  text-align: center; 
+  padding: 250px 20px; 
   position: relative;
 }
 
@@ -104,7 +129,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dunkler Overlay-Effekt */
+  background-color: rgba(0, 0, 0, 0.5); 
   z-index: 1;
 }
 
@@ -114,72 +139,75 @@ html {
 }
 
 .hero-content h1 {
-  font-size: 7rem; /* Große Schrift für die Überschrift */
-  margin: 0 0 50px; /* Abstand nach unten */
+  font-size: clamp(5rem, 8vw, 16rem); /* Minimum 2rem, Maximum 6rem */
+  margin: 0 0 50px;
+  text-align: center; /* Für eine bessere mobile Darstellung */
 }
 
+
+
+
 .hero-content p {
-  font-size: 3rem; /* Textgröße für den Untertitel */
+  font-size: 3rem; 
   margin: 0 0 30px;
 }
 .hero-content p {
-  font-size: 3rem; /* Textgröße für den Untertitel */
-  margin: 0 0 60px; /* Abstand nach unten erhöhen */
-  padding-bottom: 50px; /* Fügt mehr Platz unterhalb des Textes hinzu */
+  font-size: 3rem; 
+  margin: 0 0 60px; 
+  padding-bottom: 50px; 
 }
 
 .hero-button {
-  background-color: #F3E7FF; /* Button-Farbe */
-  color: #000000; /* Schwarze Schrift */
+  background-color: #F3E7FF; 
+  color: #000000; 
   text-decoration: none;
   padding: 30px 60px;
   font-size: 1.5rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  margin-top: 20px; /* Abstand nach oben */
+  margin-top: 20px; 
 }
 
 
 .hero-button:hover {
-  opacity: 0.8; /* Hover-Effekt */
+  opacity: 0.8; 
 }
 
-/* Über Uns - Abschnitt */
+
 .about-section {
   background-color: #EADEF6;
-  padding: 50px 20px; /* Abstand innen */
+  padding: 50px 20px; 
 }
 
 .about-container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column; 
   max-width: 1200px;
-  margin: 0 auto; /* Zentriert den Container */
-  gap: 20px;
+  margin: 0 auto;
+  align-items: center; 
 }
 
 .about-image {
-  flex: 1.1;
-  text-align: center; /* Zentriert das Bild */
+  order: 2; 
+  text-align: center;
 }
 
 .about-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 0px; /* Optionale Abrundung */
+  border-radius: 0px; 
 }
 
 .about-text {
-  flex: 2;
-  color: #000000;
+  order: 1; 
+  text-align: center; 
 }
 
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #262626; /* Dunkleres Grau */
+  color: #262626; 
 }
 
 .about-text p {
@@ -188,7 +216,6 @@ html {
   font-size: 1rem;
 }
 
-/* Spendenprojekte */
 .donation-projects {
   background-color: #F2EEFF;
   padding: 50px 20px;
@@ -210,7 +237,7 @@ html {
 
 .project-box {
   background-color: #EADEF6;
-  padding: 0; /* Entfernt zusätzliches Padding oben */
+  padding: 0; 
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -219,10 +246,10 @@ html {
 }
 
 .project-box img {
-  width: 100%; /* Füllt die gesamte Breite der Box */
-  height: 150px; /* Einheitliche Höhe für alle Bilder */
-  object-fit: cover; /* Zuschneiden des Bildes, falls nötig */
-  margin: 0; /* Entfernt eventuelle Abstände */
+  width: 100%; 
+  height: 150px; 
+  object-fit: cover; 
+  margin: 0; 
 }
 
 .project-box h3 {
@@ -237,32 +264,27 @@ html {
   color: #000000;
   line-height: 1.6;
   margin: 0 10px 20px;
-  flex-grow: 1; /* Füllt den verfügbaren Platz */
+  flex-grow: 1; 
 }
-
 
 .project-button {
   background-color: #BAB5CD;
   color: #000000;
   text-decoration: none;
-  padding: 10px 20px; /* Innenabstand */
+  padding: 10px 20px; 
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  margin: 20px auto; /* Zentriert den Button */
-  max-width: 150px; /* Maximale Breite des Buttons */
-  display: block; /* Blockelement, um zentriert zu bleiben */
-  text-align: center; /* Text im Button zentrieren */
+  margin: 20px auto; 
+  max-width: 150px; 
+  display: block; 
+  text-align: center; 
 }
-
 
 .project-button:hover {
   opacity: 0.8;
 }
 
-
-
-/* Kunstgalerie */
 .art-gallery {
   background-color: #EADEF6;
   padding: 60px 20px;
@@ -288,31 +310,29 @@ html {
 
 .carousel {
   overflow: hidden;
-  width: 100%; /* Begrenze die sichtbare Breite */
-  max-width: 1200px; /* Optional: Maximale Breite für große Bildschirme */
-  margin: 0 auto; /* Zentriert das Karussell */
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto; 
   position: relative;
 }
 
 .carousel-track {
   display: flex;
-  gap: 15px; /* Abstand zwischen den Bildern */
-  transition: transform 0.5s ease-in-out; /* Weicher Übergang */
-  will-change: transform; /* Optimierung für flüssige Animationen */
+  gap: 15px; 
+  transition: transform 0.5s ease-in-out; 
+  will-change: transform;
 }
 
 .carousel img {
   flex-shrink: 0;
-  width: 300px; /* Breite eines Bildes */
-  height: 480px; /* Höhe eines Bildes */
-  object-fit: cover; /* Zuschneiden, um die Höhe zu halten */
+  width: 300px; 
+  height: 480px; 
+  object-fit: cover; 
 }
-
 
 .carousel img:last-child {
-  margin-right: 0; /* Entfernt den Abstand nach dem letzten Bild */
+  margin-right: 0;
 }
-
 
 .event-calendar {
   background-color: #F2EEFF;
@@ -331,19 +351,18 @@ html {
   font-size: 1rem;
   color: #262626;
   line-height: 1.6;
-  margin: 20px auto; /* Vertikaler Abstand */
-  padding: 0 40px; /* Horizontaler Abstand von den Rändern */
-  max-width: 800px; /* Begrenzung der maximalen Breite */
-  text-align: center; /* Zentriert den Text */
+  margin: 20px auto; 
+  padding: 0 40px; 
+  max-width: 800px; 
+  text-align: center; 
 }
-
 
 .event-list {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Abstand zwischen den Boxen */
-  max-width: 1200px; /* Maximale Breite der Event-Kästen */
-  margin: 0 auto; /* Zentriert die Liste */
+  gap: 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
 .event-item {
@@ -353,42 +372,40 @@ html {
   padding: 20px;
   border-radius: 0px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  gap: 30px; /* Abstand zwischen Datum, Details und Button */
-  width: 100%; /* Füllt die Breite der Liste aus */
-  max-width: 1200px; /* Breite der Boxen */
-  margin: 0 auto; /* Zentriert jede Box */
+  gap: 30px; 
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
-
 .event-date {
-  font-size: 1rem; /* Kleinere Schriftgröße */
+  font-size: 1rem; 
   font-weight: bold;
   color: #262626;
   text-align: center;
-  min-width: 100px; /* Stellt sicher, dass das Datum Platz hat */
-  line-height: 1; /* Kompakte Darstellung */
-  align-self: flex-start; /* Positioniert das Datum oben */
-  margin-top: 5px; /* Passt die Position fein an */
+  min-width: 100px;
+  line-height: 1; 
+  align-self: flex-start; 
+  margin-top: 5px;
 }
 
-
 .event-details {
-  flex: 1; /* Nimmt den verfügbaren Platz ein */
+  flex: 1; 
   text-align: left;
-  margin-right: 30px; /* Abstand zum Button */
+  margin-right: 30px; 
 }
 
 .event-details h3 {
   font-size: 1.5rem;
   color: #262626;
-  margin: 0; /* Entfernt zusätzlichen Platz oben und unten */
+  margin: 0; 
 }
 
 .event-details p {
   font-size: 1rem;
   color: #000000;
   line-height: 1.5;
-  margin: 10px 0 0; /* Abstand nur nach oben */
+  margin: 10px 0 0; 
 }
 
 .event-button {
@@ -400,13 +417,12 @@ html {
   font-weight: bold;
   border-radius: 0px;
   white-space: nowrap;
-  flex-shrink: 0; /* Verhindert, dass der Button verkleinert wird */
+  flex-shrink: 0; 
 }
 
 .event-button:hover {
   opacity: 0.8;
 }
-
 
 .artist-section {
   background-color: #EADEF6;
@@ -530,7 +546,7 @@ html {
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%; /* Einheitliche Breite */
+    width: 100%; 
     padding: 10px;
     font-size: 1rem;
     color: #262626;
@@ -541,11 +557,11 @@ html {
 }
 
 .form-group select {
-    appearance: none; /* Entfernt Standard-Pfeile des Dropdowns (optional) */
+    appearance: none; 
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23262626' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 10px center; /* Pfeil rechtsbündig platzieren */
-    background-size: 10px; /* Größe des Pfeils */
+    background-position: right 10px center; 
+    background-size: 10px; 
 }
 
 
@@ -575,31 +591,31 @@ html {
 
 .checkbox-group {
   display: flex;
-  align-items: center; /* Zentriert Checkbox und Text vertikal */
-  gap: 10px; /* Abstand zwischen Checkbox und Label */
+  align-items: center; 
+  gap: 10px; 
 }
 
 .checkbox-group input[type="checkbox"] {
-  width: 20px; /* Größe der Checkbox */
-  height: 20px; /* Größe der Checkbox */
-  margin: 0; /* Entfernt Standard-Abstand */
-  border: 2px solid #BAB5CD; /* Rahmenfarbe passend zur Gestaltung */
-  background-color: #EADEF6; /* Hintergrundfarbe */
-  border-radius: 0px; /* Optionale Abrundung */
-  appearance: none; /* Entfernt Standard-Styling der Checkbox */
-  cursor: pointer; /* Zeigt den Zeiger für Interaktivität */
-  position: relative; /* Ermöglicht das Hinzufügen des Häkchens */
+  width: 20px; 
+  height: 20px; 
+  margin: 0; 
+  border: 2px solid #BAB5CD; 
+  background-color: #EADEF6; 
+  border-radius: 0px; 
+  appearance: none; 
+  cursor: pointer;
+  position: relative; 
 }
 
 .checkbox-group input[type="checkbox"]:checked {
-  background-color: #BAB5CD; /* Farbe der Checkbox, wenn sie ausgewählt ist */
-  border-color: #BAB5CD; /* Rahmenfarbe, wenn ausgewählt */
+  background-color: #BAB5CD; 
+  border-color: #BAB5CD; 
 }
 
 .checkbox-group input[type="checkbox"]:checked::after {
-  content: '✓'; /* Häkchen-Symbol */
+  content: '✓'; 
   font-size: 14px;
-  color: #FFFFFF; /* Farbe des Häkchens */
+  color: #FFFFFF;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -741,29 +757,29 @@ html {
 
 .footer {
   background-color: #F2EEFF;
-  padding: 150px 20px; /* Padding oben und unten, um genügend Platz für das Logo zu schaffen */
+  padding: 150px 20px; 
   font-family: 'Josefin Sans', sans-serif;
   color: #262626;
-  position: relative; /* Ermöglicht absolute Positionierung von Elementen innerhalb des Footers */
+  position: relative; 
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between; /* Elemente links und rechts haben Abstand */
+  justify-content: space-between; 
   max-width: 1200px;
   margin: 0 auto;
-  position: relative; /* Kontext für absolute Positionierung des Logos */
+  position: relative; 
 }
 
 .footer-center {
-  position: absolute; /* Ermöglicht unabhängige Positionierung des Logos */
-  top: 50%; /* Positioniert das Logo vertikal in der Mitte des Footers */
-  left: 50%; /* Positioniert das Logo horizontal in der Mitte */
-  transform: translate(-50%, -50%); /* Korrigiert die Verschiebung für exakte Zentrierung */
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
 }
 
 .footer-center img {
-  height: 300px; /* Passe die Größe des Logos an */
+  height: 300px; 
 }
 
 .footer-left,
