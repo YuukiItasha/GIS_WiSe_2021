@@ -1,58 +1,65 @@
 const track = document.querySelector('.carousel-track');
 const leftArrow = document.querySelector('.art-gallery .arrow:nth-of-type(1)');
 const rightArrow = document.querySelector('.art-gallery .arrow:nth-of-type(2)');
-const items = Array.from(track.children); // Alle Bilder im Track
+const items = Array.from(track.children); 
 
-let currentIndex = 1; // Start beim ersten echten Bild
+let currentIndex = 1; // Start erstes Bild
 const itemsToShow = 4; // Anzahl der sichtbaren Bilder
 
-// Klone das erste und letzte Bild
+// zum durchlaufen 
 const firstClone = items[0].cloneNode(true);
 const lastClone = items[items.length - 1].cloneNode(true);
 
 firstClone.classList.add('clone');
 lastClone.classList.add('clone');
 
-// Füge die Klone hinzu
-track.appendChild(firstClone); // Klone am Ende
-track.prepend(lastClone); // Klone am Anfang
+// weitere Klone hinzugefügt
+track.appendChild(firstClone); // Ende
+track.prepend(lastClone); // Anfang
 
-// Dynamische Breite des Tracks
+// Breite des Karussells
 function setTrackWidth() {
     const itemWidth = items[0].offsetWidth;
     const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
 
-    // Breite aller echten und geklonten Bilder
+    // Breite der Bilder
     track.style.width = `${(itemWidth + gap) * track.children.length}px`;
 }
 
-// Bewegung des Karussells
+// Bewegung 
 function updateCarousel() {
     const itemWidth = items[0].offsetWidth + parseFloat(window.getComputedStyle(track).gap || 0);
-    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+    // Berechnung der Position basierend auf sichtbaren Elementen
+    const translateX = -currentIndex * itemWidth;
+    track.style.transform = `translateX(${translateX}px)`;
 }
 
-// Springen zu echtem Anfang/Ende (nach der Animation)
+// am Ende vom Karusell den Klon holen
 function checkClones() {
     const itemsCount = items.length;
 
+    // Springen zu echtem Anfang/Ende, falls ein Klon erreicht wird
     if (track.children[currentIndex].classList.contains('clone')) {
         if (currentIndex === 0) {
-            currentIndex = itemsCount; // Springe zum echten letzten Bild
+            currentIndex = itemsCount; // zum letzten Bild
         } else if (currentIndex === track.children.length - 1) {
-            currentIndex = 1; // Springe zum echten ersten Bild
+            currentIndex = 1; // zum ersten Bild
         }
 
-        // Sofortiges Springen ohne Animation
+        // Springen ohne Animation
         track.style.transition = 'none';
         updateCarousel();
+
+        // Animation wieder aktivieren
         setTimeout(() => {
-            track.style.transition = 'transform 0.5s ease-in-out';
-        });
+            track.style.transition = 'transform 0.5s ease-in-out'; //dass es smooth ist
+        }, 50); // Leichte Verzögerung, um den Sprung zu vermeiden
     }
 }
 
-// Event-Listener für die Pfeile
+
+// Pfeile
 leftArrow.addEventListener('click', () => {
     currentIndex--;
     updateCarousel();
@@ -70,3 +77,27 @@ window.addEventListener('load', () => {
     setTrackWidth();
     updateCarousel();
 });
+
+function getItemsToShow() {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth > 1200) return 4; // Desktop: 4 Bilder
+    if (screenWidth > 768) return 3;  // Tablet: 3 Bilder
+    return 2;                         // Mobile: 2 Bilder
+}
+
+// Bewegung des Karussells mit dynamischer Berechnung
+function updateCarousel() {
+    const itemWidth = items[0].offsetWidth + parseFloat(window.getComputedStyle(track).gap || 0);
+    const totalWidth = (itemWidth + parseFloat(window.getComputedStyle(track).gap || 0)) * getItemsToShow();
+
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    track.style.width = `${totalWidth}px`;
+}
+
+// Fensteränderungen für responsive
+window.addEventListener('resize', () => {
+    setTrackWidth();
+    updateCarousel();
+});
+
