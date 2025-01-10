@@ -111,7 +111,7 @@ html {
 }
 
 .hero-section {
-  background-image: url('/RWD/Bilder/background.jpg') !important; 
+  background-image: url('https://yuukiitasha.github.io/GIS_WiSe_2021/RWD/Bilder/background.jpg'); 
   background-size: cover; 
   background-position: center; 
   color: #E5E5E5; 
