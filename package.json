@@ -3,9 +3,13 @@
     "@types/node": "^16.11.12",
     "mongo": "^0.1.0",
     "mongodb": "^4.3.1",
-    "mongos": "^0.0.0"
+    "mongos": "^0.0.0",
+    "three": "^0.152.2"
   },
   "scripts": {
     "start": "node Aufgabe7/server.js"
+  },
+  "devDependencies": {
+    "vite": "^4.3.8"
   }
 }
