@@ -42,6 +42,38 @@ function checkClones() {
     }
 }
 
+let startX = 0;
+let endX = 0;
+
+// Touchstart-Event: Startposition speichern
+track.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+});
+
+// Touchend-Event: Endposition speichern und Swipe-Distanz berechnen
+track.addEventListener('touchend', (event) => {
+    endX = event.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+// Swipe-Logik
+function handleSwipe() {
+    const swipeDistance = endX - startX;
+
+    if (swipeDistance > 50) {
+        // Swipe nach rechts (vorheriges Bild)
+        currentIndex--;
+        updateCarousel();
+        track.addEventListener('transitionend', checkClones);
+    } else if (swipeDistance < -50) {
+        // Swipe nach links (nächstes Bild)
+        currentIndex++;
+        updateCarousel();
+        track.addEventListener('transitionend', checkClones);
+    }
+}
+
+
 leftArrow.addEventListener('click', () => {
     currentIndex--;
     updateCarousel();
