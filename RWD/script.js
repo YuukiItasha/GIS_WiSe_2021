@@ -45,18 +45,18 @@ function checkClones() {
 let startX = 0;
 let endX = 0;
 
-// Touchstart-Event: Startposition speichern
+// Karusell Touch
+
 track.addEventListener('touchstart', (event) => {
     startX = event.touches[0].clientX;
 });
 
-// Touchend-Event: Endposition speichern und Swipe-Distanz berechnen
+
 track.addEventListener('touchend', (event) => {
     endX = event.changedTouches[0].clientX;
     handleSwipe();
 });
 
-// Swipe-Logik
 function handleSwipe() {
     const swipeDistance = endX - startX;
 
