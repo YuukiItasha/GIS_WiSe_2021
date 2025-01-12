@@ -57,21 +57,21 @@
     <section id="spendenprojekte" class="donation-projects">
         <h2>Spendenprojekte</h2>
         <div class="projects-container">
-            <!-- Erster Kasten -->
+            
             <div class="project-box">
                 <img src="Bilder/tierschutzverein.png" alt="Tierschutzverein Triberg">
                 <h3>Tierschutzverein Triberg ev.</h3>
                 <p>Der Tierschutzverein Triberg und Umgebung e.V. setzt sich mit viel Herzblut für den Schutz und die Rettung von Tieren in Not ein. Mit jeder Spende wird die Versorgung, Pflege und Vermittlung hilfsbedürftiger Tiere in liebevolle Zuhause unterstützt.</p>
                 <a href="https://www.tsv-triberg.de/" class="project-button">zum Projekt</a>
             </div>
-            <!-- Zweiter Kasten -->
+           
             <div class="project-box">
                 <img src="Bilder/circular_black_forest.png" alt="Circular Black Forest">
                 <h3>Circular Black Forest</h3>
                 <p>Circular Black Forest fördert die Kreislaufwirtschaft im Schwarzwald. Die Initiative hilft, Abfälle zu vermeiden, Materialien wiederzuverwenden und die Umwelt sowie die regionale Wirtschaft zu stärken.</p>
                 <a href="https://www.circular-blackforest.de/" class="project-button">zum Projekt</a>
             </div>
-            <!-- Dritter Kasten -->
+            
             <div class="project-box">
                 <img src="Bilder/frauenstiftung.png" alt="Stuttgarter Frauenstiftung">
                 <h3>Stuttgarter Frauenstiftung</h3>
@@ -106,7 +106,7 @@
             Bleib auf dem Laufenden und werde Teil unserer kreativen Bewegung für eine bessere Welt. Gemeinsam lassen wir Kunst Gutes tun!
         </p>
         <div class="event-list">
-            <!-- Event 1 -->
+            
             <div class="event-item">
                 <span class="event-date">25.01.2025</span>
                 <div class="event-details">
@@ -115,7 +115,7 @@
                 </div>
                 <a href="#kontaktformular" class="event-button">zur Eventanmeldung</a>
             </div>
-            <!-- Event 2 -->
+           
             <div class="event-item">
                 <span class="event-date">15.02.2025</span>
                 <div class="event-details">
@@ -124,7 +124,7 @@
                 </div>
                 <a href="#kontaktformular" class="event-button">zur Eventanmeldung</a>
             </div>
-            <!-- Event 3 -->
+           
             <div class="event-item">
                 <span class="event-date">22.02.2025</span>
                 <div class="event-details">
@@ -133,7 +133,7 @@
                 </div>
                 <a href="#kontaktformular" class="event-button">zur Eventanmeldung</a>
             </div>
-            <!-- Event 4 -->
+            
             <div class="event-item">
                 <span class="event-date">15.03.2025</span>
                 <div class="event-details">
@@ -142,7 +142,7 @@
                 </div>
                 <a href="#kontaktformular" class="event-button">zur Eventanmeldung</a>
             </div>
-            <!-- Event 5 -->
+           
             <div class="event-item">
                 <span class="event-date">22.03.2025</span>
                 <div class="event-details">
@@ -151,7 +151,7 @@
                 </div>
                 <a href="#kontaktformular" class="event-button">zur Eventanmeldung</a>
             </div>
-            <!-- Event 6 -->
+           
             <div class="event-item">
                 <span class="event-date">12.04.2025</span>
                 <div class="event-details">
@@ -160,7 +160,7 @@
                 </div>
                 <a href="#kontaktformular" class="event-button">zur Eventanmeldung</a>
             </div>
-            <!-- Event 7 -->
+           
             <div class="event-item">
                 <span class="event-date">26.04.2025</span>
                 <div class="event-details">
@@ -169,7 +169,7 @@
                 </div>
                 <a href="#kontaktformular" class="event-button">zur Eventanmeldung</a>
             </div>
-            <!-- Event 8 -->
+            
             <div class="event-item">
                 <span class="event-date">10.05.2025</span>
                 <div class="event-details">
@@ -263,7 +263,7 @@
             <div class="contact-image">
                 <img src="Bilder/contact-image.jpg" alt="Event Anmeldung">
             </div>
-           
+            
             <div class="contact-form">
                 <h2>Kontaktformular</h2>
                 <p>
@@ -271,7 +271,7 @@
                     Fülle einfach die Felder aus und wir melden uns schnellstmöglich bei dir mit allen wichtigen
                     Informationen zu deiner Anmeldung. Wir freuen uns darauf, dich bei unseren Veranstaltungen begrüßen zu dürfen!
                 </p>
-                <form action="#" method="POST">
+                <form id="contactForm" action="#" method="POST">
                     <div class="form-group">
                         <label for="event">Wähle dein Event*</label>
                         <select id="event" name="event" required>
@@ -312,12 +312,21 @@
                             Ich habe die Datenschutzbestimmungen gelesen und akzeptiere sie.
                         </label>
                     </div>
-                    
                     <button type="submit" class="submit-button">zum Event anmelden</button>
                 </form>
             </div>
         </div>
+    
+        
+        <div id="popupMessage" class="popup-overlay" style="display: none;">
+            <div class="popup-content">
+                <p>Danke für dein Interesse an unserer Veranstaltung. Wir melden uns!</p>
+                <button id="closePopup" class="popup-button">Schließen</button>
+            </div>
+        </div>
     </section>
+    
+    
     
     <section class="newsletter-section">
         <div class="newsletter-container">
@@ -326,7 +335,7 @@
                 Bleib auf dem Laufenden mit dem ArtGives Newsletter! Erfahre mehr über unsere kommenden
                 Events, spannende Kunstauktionen und wie du Teil unserer kreativen Bewegung werden kannst.
             </p>
-            <form action="#" method="POST" class="newsletter-form">
+            <form id="newsletterForm" class="newsletter-form">
                 <div class="form-group">
                     <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required>
                     <button type="submit" class="newsletter-button">Anmelden</button>
@@ -339,26 +348,35 @@
                 </div>
             </form>
             <div class="social-media">
-                <a href="#" target="_blank" aria-label="Facebook">
+                <a href="#" id="openFacebook" aria-label="Facebook">
                     <img src="Bilder/facebook-icon.png" alt="Facebook">
                 </a>
-                <a href="#" target="_blank" aria-label="Instagram">
+                <a href="#" id="openInstagram" aria-label="Instagram">
                     <img src="Bilder/instagram-icon.png" alt="Instagram">
                 </a>
-                <a href="#" target="_blank" aria-label="TikTok">
+                <a href="#" id="openTiktok" aria-label="TikTok">
                     <img src="Bilder/tiktok-icon.png" alt="TikTok">
                 </a>
             </div>
         </div>
-    </section> 
+    
+      
+        <div id="popupNewsletter" class="popup-overlay" style="display: none;">
+            <div class="popup-content">
+                <p>Danke, dass du dich zu unserem Newsletter angemeldet hast!</p>
+                <button class="popup-close" data-close="popupNewsletter">Schließen</button>
+            </div>
+        </div>
+    </section>
+    
     
 </body>
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-left">
-            <a href="#">AGB</a>, 
-            <a href="#">Datenschutz</a>, 
-            <a href="#">Impressum</a>
+            <a href="#" id="openAgb">AGB</a>,
+            <a href="#" id="openDatenschutz">Datenschutz</a>,
+            <a href="#" id="openImpressum">Impressum</a>
         </div>
         <div class="footer-center">
             <img src="Bilder/logo.png" alt="ArtGives Logo">
@@ -367,6 +385,32 @@
             © ArtGives
         </div>
     </div>
+
+   
+    <div id="popupAgb" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h2>AGB</h2>
+            <p>Hier stehen die allgemeinen Geschäftsbedingungen...</p>
+            <button class="popup-close" data-close="popupAgb">Schließen</button>
+        </div>
+    </div>
+
+    <div id="popupDatenschutz" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h2>Datenschutz</h2>
+            <p>Hier stehen die Datenschutzbestimmungen...</p>
+            <button class="popup-close" data-close="popupDatenschutz">Schließen</button>
+        </div>
+    </div>
+
+    <div id="popupImpressum" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h2>Impressum</h2>
+            <p>Hier steht das Impressum...</p>
+            <button class="popup-close" data-close="popupImpressum">Schließen</button>
+        </div>
+    </div>
 </footer>
+
 
 </html>
