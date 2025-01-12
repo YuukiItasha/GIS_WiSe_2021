@@ -377,6 +377,13 @@ body {
   will-change: transform;
 }
 
+.carousel-track {
+  overflow: hidden;
+  touch-action: pan-y; /* Ermöglicht Wischen nur horizontal */
+  cursor: grab; /* Zeigt interaktive Möglichkeit an */
+}
+
+
 .carousel img {
   flex-shrink: 0;
   width: 300px; 
