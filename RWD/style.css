@@ -18,7 +18,7 @@ body {
 
  /* banner */
 
-.banner {
+ .banner {
   background-color: #BAB5CD;
   display: flex;
   justify-content: space-between;
@@ -38,11 +38,24 @@ body {
   padding: 10px 15px;
   font-weight: bold;
   font-size: 14px;
-  border: none; 
+  border: none;
 }
-  
+
 .banner-button:hover {
   opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .banner-button {
+    margin-top: 10px; 
+  }
 }
 
  /* header und navigation */
