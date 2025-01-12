@@ -47,73 +47,83 @@ body {
 
  /* header und navigation */
 
-html {
-  scroll-behavior: smooth;
-}
-
 .main-header {
   background-color: #F3E7FF;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  position: relative; 
-  z-index: 10; 
-  
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  height: 100%; 
+  padding: 15px 20px;
+  height: 60px; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
-  max-height: 150px; 
-  width: auto; 
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
 }
 
-.navigation ul {
+.navigation {
+  position: relative;
+}
+
+.nav-list {
   list-style: none;
+  gap: 10px;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 30px;
-  height: 100%; 
-  align-items: center; 
-  flex-direction: column; 
-  gap: 10px;
+  display: flex; 
+  flex-direction: row; 
 }
 
-@media (min-width: 768px) {
-  .main-header {
-      flex-direction: row;
-      align-items: center;
-      padding: 15px 40px;
-  }
-
-  .navigation ul {
-      flex-direction: row; 
-      gap: 30px;
-  }
-}
-
-
-.navigation a {
+.nav-list li a {
   text-decoration: none;
-  color: #000000;
-  font-weight: bold;
   font-size: 16px;
-  line-height: 1;
+  font-weight: bold;
+  color: #000000;
+  padding: 10px;
 }
 
-.navigation a:hover {
-  opacity: 0.7;
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute; 
+  right: 20px; 
+  top: 50%;
+  transform: translateY(-50%); 
 }
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block; 
+  }
+
+  .nav-list {
+    display: none; 
+    flex-direction: column; 
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 20px;
+    background-color: #F3E7FF;
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    width: 250px; 
+    box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 1000;
+  }
+
+  .nav-list.show {
+    display: flex; 
+  }
+}
+
 
  /* Titelbild */
 
@@ -666,7 +676,7 @@ html {
  /* Popup fenster */
 
 .popup-content {
-  background-color: #F2EEFF; /* Passende Hintergrundfarbe */
+  background-color: #F2EEFF; 
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
@@ -797,7 +807,7 @@ html {
 
  /* newsletter */
 
-.newsletter-section {
+ .newsletter-section {
   background-color: #EADEF6;
   padding: 50px 20px;
   font-family: 'Josefin Sans', sans-serif;
@@ -869,19 +879,20 @@ html {
 
 .checkbox-group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  align-items: flex-start; 
+  gap: 10px; 
+  text-align: left; 
+  flex-wrap: wrap; 
 }
 
 .checkbox-group input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  margin: 0;
-  border: 2px solid #BAB5CD;
+  margin: 0; 
+  border: 2px solid #BAB5CD; 
   background-color: #EADEF6;
-  border-radius: 0px;
-  appearance: none;
+  border-radius: 0px; 
+  appearance: none; 
   cursor: pointer;
   position: relative;
 }
@@ -904,7 +915,23 @@ html {
 .checkbox-group label {
   font-size: 1rem;
   color: #262626;
+  line-height: 1.4;
+  margin: 0; 
+  flex: 1; 
+  word-wrap: break-word; 
 }
+
+@media (max-width: 768px) {
+  .checkbox-group {
+    align-items: flex-start; 
+    gap: 10px; 
+  }
+
+  .checkbox-group label {
+    text-align: left; 
+  }
+}
+
 
  /* social media */
 
