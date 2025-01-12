@@ -7,7 +7,6 @@ const items = Array.from(track.children);
 let currentIndex = 1; // Start erstes Bild
 const itemsToShow = 4; // Anzahl der sichtbaren Bilder
 
-
 const firstClone = items[0].cloneNode(true);
 const lastClone = items[items.length - 1].cloneNode(true);
 firstClone.classList.add('clone');
@@ -85,14 +84,6 @@ document.getElementById('closePopup').addEventListener('click', function () {
     });
 });
 
-// Schließen von Popups
-document.querySelectorAll('.popup-close').forEach(button => {
-    button.addEventListener('click', function () {
-        const popupId = this.getAttribute('data-close');
-        document.getElementById(popupId).style.display = 'none';
-    });
-});
-
 // Social-Media popups
 document.getElementById('openFacebook').addEventListener('click', function (e) {
     e.preventDefault(); 
@@ -109,9 +100,30 @@ document.getElementById('openTiktok').addEventListener('click', function (e) {
     document.getElementById('popupTiktok').style.display = 'flex';
 });
 
-
 // Newsletter-Formular
+
 document.getElementById('newsletterForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); 
+
     document.getElementById('popupNewsletter').style.display = 'flex';
+
+    this.reset();
+});
+
+// Schließen von Pop ups 
+
+document.querySelectorAll('.popup-close').forEach(button => {
+    button.addEventListener('click', function () {
+        const popupId = this.getAttribute('data-close');
+        document.getElementById(popupId).style.display = 'none';
+    });
+});
+
+// Burger Menu
+
+const burgerMenu = document.querySelector('.burger-menu');
+const navList = document.querySelector('.nav-list');
+
+burgerMenu.addEventListener('click', () => {
+  navList.classList.toggle('show');
 });
