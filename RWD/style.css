@@ -25,6 +25,7 @@ body {
   align-items: center;
   padding: 15px 50px;
   color: #000000;
+  gap: 20px;
 }
 
 .banner-text {
@@ -377,10 +378,11 @@ body {
   will-change: transform;
 }
 
-.carousel-track {
+
+.carousel-track { /* Touch */
   overflow: hidden;
-  touch-action: pan-y; /* Ermöglicht Wischen nur horizontal */
-  cursor: grab; /* Zeigt interaktive Möglichkeit an */
+  touch-action: pan-y; 
+  cursor: grab; 
 }
 
 
