@@ -1,3 +1,5 @@
+// Karussell
+
 const track = document.querySelector('.carousel-track');
 const leftArrow = document.querySelector('.art-gallery .arrow:nth-of-type(1)');
 const rightArrow = document.querySelector('.art-gallery .arrow:nth-of-type(2)');
@@ -101,3 +103,85 @@ window.addEventListener('resize', () => {
     updateCarousel();
 });
 
+// Kontaktformular
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Verhindert das automatische Absenden des Formulars
+
+    // Zeige das Popup an
+    const popup = document.getElementById('popupMessage');
+    popup.style.display = 'flex';
+
+    // Formular zurücksetzen
+    this.reset();
+});
+
+
+document.getElementById('closePopup').addEventListener('click', function () {
+    const popup = document.getElementById('popupMessage');
+    popup.style.display = 'none';
+});
+
+// AGB Datenschutz und Impressum
+
+document.getElementById('openAgb').addEventListener('click', function (e) {
+    e.preventDefault(); 
+    document.getElementById('popupAgb').style.display = 'flex';
+});
+
+document.getElementById('openDatenschutz').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('popupDatenschutz').style.display = 'flex';
+});
+
+document.getElementById('openImpressum').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('popupImpressum').style.display = 'flex';
+});
+
+
+document.querySelectorAll('.popup-close').forEach(button => {
+    button.addEventListener('click', function () {
+        const popupId = this.getAttribute('data-close');
+        document.getElementById(popupId).style.display = 'none';
+    });
+});
+
+
+// Event-Listener für Social-Media-Icons
+
+document.getElementById('openFacebook').addEventListener('click', function (e) {
+    e.preventDefault(); // Verhindert das Öffnen des Links
+    document.getElementById('popupFacebook').style.display = 'flex';
+});
+
+document.getElementById('openInstagram').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('popupInstagram').style.display = 'flex';
+});
+
+document.getElementById('openTiktok').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('popupTiktok').style.display = 'flex';
+});
+
+
+document.querySelectorAll('.popup-close').forEach(button => {
+    button.addEventListener('click', function () {
+        const popupId = this.getAttribute('data-close');
+        document.getElementById(popupId).style.display = 'none';
+    });
+});
+
+// Event-Listener für die Newsletter-Anmeldung
+document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Verhindert das Standard-Formularverhalten
+    document.getElementById('popupNewsletter').style.display = 'flex'; // Zeigt das Popup an
+});
+
+document.querySelectorAll('.popup-close').forEach(button => {
+    button.addEventListener('click', function () {
+        const popupId = this.getAttribute('data-close');
+        document.getElementById(popupId).style.display = 'none';
+    });
+});
