@@ -2,6 +2,7 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
+
 @media (min-width: 768px) {
  
 }
@@ -14,6 +15,8 @@ body {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
 }
+
+ /* banner */
 
 .banner {
   background-color: #BAB5CD;
@@ -41,6 +44,8 @@ body {
 .banner-button:hover {
   opacity: 0.8;
 }
+
+ /* header und navigation */
 
 html {
   scroll-behavior: smooth;
@@ -110,6 +115,8 @@ html {
   opacity: 0.7;
 }
 
+ /* Titelbild */
+
 .hero-section {
   background-image: url('https://yuukiitasha.github.io/GIS_WiSe_2021/RWD/Bilder/background.jpg'); 
   background-size: cover; 
@@ -137,7 +144,7 @@ html {
 }
 
 .hero-content h1 {
-  font-size: clamp(5rem, 8vw, 16rem); 
+  font-size: clamp(4rem, 8vw, 16rem); 
   margin: 0 0 50px;
   text-align: center; 
 }
@@ -146,11 +153,11 @@ html {
 
 
 .hero-content p {
-  font-size: 3rem; 
+  font-size: clamp(1.5rem, 2.5vw, 5rem);; 
   margin: 0 0 30px;
 }
 .hero-content p {
-  font-size: 3rem; 
+  font-size: clamp(1.5rem, 2.5vw, 5rem);; 
   margin: 0 0 60px; 
   padding-bottom: 50px; 
 }
@@ -173,37 +180,40 @@ html {
 
 .about-section {
   background-color: #EADEF6;
-  padding: 50px 20px; 
+  padding: 50px 20px;
 }
+
+ /* Über uns */
 
 .about-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column; /* Standard: Spaltenlayout für mobile Ansicht */
   max-width: 1200px;
   margin: 0 auto;
-  align-items: center; 
+  align-items: center; /* Zentriert Inhalte in der mobilen Ansicht */
+  gap: 20px; /* Abstand zwischen Bild und Text */
 }
 
 .about-image {
-  order: 2; 
+  order: 2; /* Bild wird unter dem Text angezeigt */
   text-align: center;
 }
 
 .about-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 0px; 
+  border-radius: 0px;
 }
 
 .about-text {
-  order: 1; 
-  text-align: center; 
+  order: 1; /* Text wird über dem Bild angezeigt */
+  text-align: center; /* Zentriert den Text in der mobilen Ansicht */
 }
 
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #262626; 
+  color: #262626;
 }
 
 .about-text p {
@@ -211,6 +221,29 @@ html {
   line-height: 1.6;
   font-size: 1rem;
 }
+
+
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row; 
+    align-items: center;
+    gap: 40px; 
+  }
+
+  .about-image {
+    order: 1; 
+    flex: 1; 
+    text-align: left; 
+  }
+
+  .about-text {
+    order: 2; 
+    flex: 2; 
+    text-align: left; 
+  }
+}
+
+ /* Spendenprojekte */
 
 .donation-projects {
   background-color: #F2EEFF;
@@ -281,6 +314,8 @@ html {
   opacity: 0.8;
 }
 
+ /* Kunstgallerie */
+
 .art-gallery {
   background-color: #EADEF6;
   padding: 60px 20px;
@@ -330,15 +365,17 @@ html {
   margin-right: 0;
 }
 
+ /* Events*/
+
 .event-calendar {
   background-color: #F2EEFF;
-  padding: 50px 20px;
+  padding: 30px 20px;
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
 }
 
 .event-calendar h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #262626;
   margin-bottom: 20px;
 }
@@ -347,61 +384,57 @@ html {
   font-size: 1rem;
   color: #262626;
   line-height: 1.6;
-  margin: 20px auto; 
-  padding: 0 40px; 
-  max-width: 800px; 
-  text-align: center; 
+  margin: 15px auto;
+  padding: 0 20px;
+  max-width: 90%;
+  text-align: center;
 }
 
 .event-list {
   display: flex;
   flex-direction: column;
-  gap: 20px; 
-  max-width: 1200px; 
-  margin: 0 auto; 
+  gap: 20px;
+  max-width: 100%; 
+  margin: 0 auto;
+  padding: 0 10px; 
+  box-sizing: border-box; 
 }
 
 .event-item {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   background-color: #EADEF6;
-  padding: 20px;
+  padding: 15px;
   border-radius: 0px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  gap: 30px; 
-  width: 100%; 
-  max-width: 1200px; 
-  margin: 0 auto; 
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box; 
+  margin: 0 auto;
 }
 
 .event-date {
-  font-size: 1rem; 
+  font-size: 0.9rem;
   font-weight: bold;
   color: #262626;
-  text-align: center;
-  min-width: 100px;
-  line-height: 1; 
-  align-self: flex-start; 
-  margin-top: 5px;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .event-details {
-  flex: 1; 
   text-align: left;
-  margin-right: 30px; 
 }
 
 .event-details h3 {
-  font-size: 1.5rem;
-  color: #262626;
-  margin: 0; 
+  font-size: 1.2rem;
+  margin: 0 0 5px;
 }
 
 .event-details p {
   font-size: 1rem;
-  color: #000000;
   line-height: 1.5;
-  margin: 10px 0 0; 
+  margin: 5px 0;
 }
 
 .event-button {
@@ -413,12 +446,60 @@ html {
   font-weight: bold;
   border-radius: 0px;
   white-space: nowrap;
-  flex-shrink: 0; 
+  text-align: center;
+  display: inline-block;
 }
 
 .event-button:hover {
   opacity: 0.8;
 }
+
+
+@media (min-width: 768px) {
+  .event-item {
+    flex-direction: row; 
+    align-items: center;
+    gap: 20px;
+  }
+
+  .event-date {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    min-width: 100px;
+  }
+
+  .event-details {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .event-button {
+    align-self: flex-end;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .event-calendar h2 {
+    font-size: 2.5rem;
+  }
+
+  .calendar-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+  }
+
+  .event-list {
+    gap: 30px;
+  }
+
+  .event-item {
+    max-width: 800px; 
+  }
+}
+
+ /* Künstler */
 
 .artist-section {
   background-color: #EADEF6;
@@ -478,6 +559,7 @@ html {
   line-height: 1.5;
 }
 
+ /* Kontaktformular */
 
 .contact-section {
   background-color: #F2EEFF;
@@ -503,7 +585,7 @@ html {
 
 .contact-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 0px;
 }
@@ -527,6 +609,95 @@ html {
   color: #262626;
   margin-bottom: 20px;
 }
+
+
+.contact-container {
+  flex-direction: column; 
+}
+
+.contact-image {
+  order: 2; 
+}
+
+.contact-form {
+  order: 1;
+}
+
+
+@media (min-width: 768px) {
+  .contact-container {
+    flex-direction: row; 
+  }
+
+  .contact-image {
+    order: 1; 
+  }
+
+  .contact-form {
+    order: 2; 
+  }
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  color: #262626;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #EADEF6;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+ /* Popup fenster */
+
+.popup-content {
+  background-color: #F2EEFF; /* Passende Hintergrundfarbe */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-content p {
+  color: #262626;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.popup-button {
+  background-color: #BAB5CD;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup-button:hover {
+  background-color: #a49ab7;
+  opacity: 0.9;
+}
+
 
 .form-group {
   margin-bottom: 15px;
@@ -623,6 +794,8 @@ html {
   color: #262626;
   line-height: 1.2;
 }
+
+ /* newsletter */
 
 .newsletter-section {
   background-color: #EADEF6;
@@ -733,6 +906,8 @@ html {
   color: #262626;
 }
 
+ /* social media */
+
 .social-media {
   margin-top: 20px;
   display: flex;
@@ -750,38 +925,40 @@ html {
   transform: scale(1.1);
 }
 
+ /* footer */
 
 .footer {
   background-color: #F2EEFF;
-  padding: 150px 20px; 
+  padding: 50px 20px; 
   font-family: 'Josefin Sans', sans-serif;
   color: #262626;
-  position: relative; 
+  position: relative;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 20px; 
   max-width: 1200px;
   margin: 0 auto;
-  position: relative; 
 }
 
 .footer-center {
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  order: 1; 
+  text-align: center;
 }
 
 .footer-center img {
-  height: 300px; 
+  height: 150px; 
+  max-width: 100%; 
 }
 
-.footer-left,
-.footer-right {
+.footer-left {
+  order: 2; 
   font-size: 1rem;
   color: #262626;
+  text-align: center; 
 }
 
 .footer-left a {
@@ -795,5 +972,104 @@ html {
 }
 
 .footer-right {
-  text-align: right;
+  order: 3; 
+  text-align: center;
+  font-size: 1rem;
+  color: #262626;
+}
+
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+  }
+
+  .footer-center {
+    order: 0; 
+    position: static; 
+    transform: none;
+  }
+
+  .footer-center img {
+    height: 200px; 
+  }
+
+  .footer-left,
+  .footer-right {
+    order: 0; 
+    text-align: left;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .footer {
+    padding: 100px 20px; 
+  }
+
+  .footer-center img {
+    height: 300px; 
+  }
+}
+
+ /* Popup fenster */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.popup-content {
+  background-color: #F2EEFF;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+
+.popup-content h2 {
+  font-size: 1.5rem;
+  color: #262626;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  font-size: 1rem;
+  color: #262626;
+  line-height: 1.6;
+}
+
+.popup-close {
+  background-color: #BAB5CD;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.popup-close:hover {
+  background-color: #a49ab7;
+  opacity: 0.9;
 }
