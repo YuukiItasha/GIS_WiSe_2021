@@ -74,7 +74,7 @@
   }
   
   .logo img {
-    max-height: 150px;
+    max-height: 70px;
     width: auto;
     object-fit: contain;
   }
@@ -201,13 +201,12 @@
   .hero-button:hover {
     opacity: 0.8; 
   }
-  
+
+   /* Über uns */
   .about-section {
     background-color: #EADEF6;
     padding: 50px 20px;
   }
-  
-   /* Über uns */
   
   .about-container {
     display: flex;
@@ -267,52 +266,126 @@
     }
   }
   
-   /* Spendenprojekte */
+/* KI im Webdesign */
+
+ .webdesign-section {
+    background-color: #F2EEFF;
+    padding: 50px 20px;
+
+  }
   
-  .donation-projects {
+  .webdesign-container {
+    display: flex;
+    flex-direction: column; 
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center; 
+    gap: 20px; 
+  }
+  
+  .webdesign-image {
+    order: 2; 
+    text-align: center;
+  }
+  
+  .webdesign-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0px;
+  }
+  
+  .webdesign-text {
+    order: 1; 
+    text-align: center; 
+  }
+  
+  .webdesign-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #262626;
+  }
+  
+  .webdesign-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  
+  @media (min-width: 768px) {
+  .webdesign-container {
+    flex-direction: row; 
+    align-items: center;
+    gap: 40px; 
+  }
+
+  .webdesign-image {
+    order: 2; 
+    flex: 1; 
+    text-align: right; 
+  }
+
+  .webdesign-text {
+    order: 1; 
+    flex: 2; 
+    text-align: left; 
+    padding-left: 50px;
+  }
+}
+
+   /* KI Tools im Vergleich */
+   
+  .vergleich-section {
+    background-color: #EADEF6;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .vergleich-projects {
     background-color: #F2EEFF;
     padding: 50px 20px;
     text-align: center;
   }
   
-  .donation-projects h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+  
+  .vergleich-projects h2 {
+   font-size: 2rem;
+    margin-bottom: 20px;
     color: #262626;
   }
   
-  .projects-container {
+  .vergleich-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
   }
   
-  .project-box {
-    background-color: #EADEF6;
+  .vergleich-box {
+    background-color: #F2EEFF;
     padding: 0; 
-    width: 300px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .project-box img {
-    width: 100%; 
-    height: 150px; 
-    object-fit: cover; 
-    margin: 0; 
-  }
+.vergleich-box img {
+  width: 50%; 
+  height: 200px; 
+  object-fit: cover; 
+  display: block;         
+  margin: 0 auto;         
+}
   
-  .project-box h3 {
+  .vergleich-box h3 {
     font-size: 1.5rem;
     color: #262626;
     margin: 20px 0 15px;
     padding: 0 10px;
   }
   
-  .project-box p {
+  .vergleich-box p {
     font-size: 1rem;
     color: #000000;
     line-height: 1.6;
@@ -320,7 +393,7 @@
     flex-grow: 1; 
   }
   
-  .project-button {
+  .vergleich-button {
     background-color: #BAB5CD;
     color: #000000;
     text-decoration: none;
@@ -334,14 +407,14 @@
     text-align: center; 
   }
   
-  .project-button:hover {
+  .vergleich-button:hover {
     opacity: 0.8;
   }
   
    /* Kunstgallerie */
   
   .art-gallery {
-    background-color: #EADEF6;
+    background-color: #F2EEFF;
     padding: 60px 20px;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
@@ -400,7 +473,7 @@
    /* Events*/
   
   .event-calendar {
-    background-color: #F2EEFF;
+    background-color: #EADEF6;
     padding: 30px 20px;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
@@ -436,7 +509,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #EADEF6;
+    background-color: #F2EEFF;
     padding: 15px;
     border-radius: 0px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -531,70 +604,89 @@
     }
   }
   
-   /* Künstler */
-  
-  .artist-section {
+ /* Fazit */
+   
+  .fazit-section {
+    background-color: #F2EEFF;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .fazit-projects {
     background-color: #EADEF6;
     padding: 50px 20px;
     text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
   }
   
-  .artist-section h2 {
-    font-size: 2.5rem;
-    color: #262626;
+  
+  .fazit-projects h2 {
+   font-size: 2rem;
     margin-bottom: 20px;
-  }
-  
-  .artist-description {
-    font-size: 1rem;
     color: #262626;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin: 0 auto 40px;
   }
   
-  .artist-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  .fazit-container {
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: center;
   }
   
-  .artist-item {
-    background-color: #F2EEFF;
-    border-radius: 0px;
+  .fazit-box {
+    background-color: #EADEF6;
+    padding: 0; 
+    width: 350px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .artist-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 0px;
-    margin-bottom: 15px;
-  }
+.fazit-box img {
+  width: 50%; 
+  height: 200px; 
+  object-fit: cover; 
+  display: block;         
+  margin: 0 auto;         
+}
   
-  .artist-item h3 {
+  .fazit-box h3 {
     font-size: 1.5rem;
     color: #262626;
-    margin-bottom: 10px;
+    margin: 20px 0 15px;
+    padding: 0 10px;
   }
   
-  .artist-item p {
+  .fazit-box p {
     font-size: 1rem;
     color: #000000;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin: 0 10px 20px;
+    flex-grow: 1; 
   }
   
+  .fazit-button {
+    background-color: #BAB5CD;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px; 
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px auto; 
+    max-width: 150px; 
+    display: block; 
+    text-align: center; 
+  }
+  
+  .fazit-button:hover {
+    opacity: 0.8;
+  }
+
+   
    /* Kontaktformular */
   
   .contact-section {
-    background-color: #F2EEFF;
+    background-color: #EADEF6;
     padding: 50px 20px;
     font-family: 'Josefin Sans', sans-serif;
   }
