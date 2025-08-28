@@ -4,7 +4,7 @@ const leftArrow = document.querySelector('.art-gallery .arrow:nth-of-type(1)');
 const rightArrow = document.querySelector('.art-gallery .arrow:nth-of-type(2)');
 const items = Array.from(track.children);
 
-let currentIndex = 1; // Start erstes Bild
+let currentIndex = 0; // Start erstes Bild
 const itemsToShow = 4; // Anzahl der sichtbaren Bilder
 
 const firstClone = items[0].cloneNode(true);
